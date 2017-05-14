@@ -1,0 +1,7326 @@
+/*
+    Lapys JS Copyright (C) 2017 The Lapys Dev Team. All rights reserved.
+    Use of this source code is governed by a GNU GENERAL PUBLIC license that can be
+    found in the LICENSE file.
+*/
+
+/* Lapys JS Colors
+    Background Colors:
+        #0078FF,
+        #0045FF
+
+    Foreground Colors:
+        #0023FF
+
+    Miscellaneous Colors:
+        #FFFFFF
+*/
+
+/* Lapys JS CSS At-Rules */
+/* @charset */
+@charset "UTF-8";
+/* @counter-style */
+@counter‐style smart-polygon {
+    suffix: "";
+    symbols: /* Unordered List Symbols (Levels 1 - 10) */;
+    system: fixed
+}
+/* @keyframes */
+    
+/* <body>, <embed>, <iframe>, <object> */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    /* [data-kbd] */
+    @keyframes txtCursor {
+        0% {
+            border-color: transparent
+        }
+    }
+
+    /* Carousel Content Animations  */
+    @keyframes blur_carousel {
+        0% {
+            filter: blur(12.5px)
+        }
+        to {
+            filter: blur(0px)
+        }
+    }
+
+    @keyframes fade_carousel {
+        0% {
+            opacity: 0
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes panel_carousel {
+        0% {
+            bottom: 100%
+        }
+        to {
+            bottom: 0
+        }
+    }
+
+    @keyframes slide_carousel {
+        0% {
+            left: 100%
+        }
+        to {
+            left: 0
+        }
+    }
+
+    @keyframes zoom_carousel {
+        0% {
+            height: 0;
+            margin: auto;
+            width: 0
+        }
+    }
+
+/* @media */
+    /* Print Screen */
+    @media print {
+        * {
+            cursor: default
+        }
+        body {
+            text-shadow: none
+        }
+        marquee {
+            -moz-binding: none
+        }
+    }
+
+    /* Mobile S - 320px */
+    @media only screen
+        and (max-width: 320px)
+        and (min-width: 0px) {
+        [class*="col-"] {
+            flex-basis: 100%
+        }
+        .m-del,
+        .ms-del {
+            display: none !important
+        }
+        .m-hide,
+        .ms-hide {
+            visibility: hidden !important
+        }
+        .m-stack {
+            flex-basis: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important
+        }
+    }
+    
+    /* Mobile M - 375px */
+    @media only screen
+        and (max-width: 374px)
+        and (min-width: 321px) {
+        [class*="col-"] {
+            flex-basis: 100%
+        }
+        .m-del,
+        .mm-del {
+            display: none !important
+        }
+        .m-hide,
+        .mm-hide {
+            visibility: hidden !important
+        }
+        .m-stack {
+            flex-basis: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important
+        }
+    }
+    
+    /* Mobile L - 425px */
+    @media only screen
+        and (max-width: 424px)
+        and (min-width: 375px) {
+        [class*="col-"] {
+            flex-basis: 100%
+        }
+        .m-del,
+        .ml-del {
+            display: none !important
+        }
+        .m-hide,
+        .ml-hide {
+            visibility: hidden !important
+        }
+        .m-stack {
+            flex-basis: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important
+        }
+    }
+    
+    /* Tablet - 768px */
+    @media only screen
+        and (max-width: 767px)
+        and (min-width: 425px) {
+        .t-del {
+            display: none !important
+        }
+        .t-hide {
+            visibility: hidden !important
+        }
+        .t-stack {
+            flex-basis: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important
+        }
+    }
+    
+    /* Laptop - 1024px */
+    @media only screen
+        and (max-width: 1023px)
+        and (min-width: 768px) {
+        .l-del {
+            display: none !important
+        }
+        .l-hide {
+            visibility: hidden !important
+        }
+        .l-stack {
+            flex-basis: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important
+        }
+    }
+    
+    /* Laptop L - 1440px */
+    @media only screen
+        and (max-width: 1439px)
+        and (min-width: 1024px) {
+        .ll-del {
+            display: none !important
+        }
+        .ll-hide {
+            visibility: hidden !important
+        }
+        .ll-stack {
+            flex-basis: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important
+        }
+    }
+    
+    /* 4K - 2560px */
+    @media only screen
+        and (max-width: 2560px)
+        and (min-width: 1440px) {
+        .fourk-del {
+            display: none !important
+        }
+        .fourk-hide {
+            visibility: hidden !important
+        }
+        .fourk-stack {
+            flex-basis: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important
+        }
+    }
+
+/* @moz-document url-prefix */
+@-moz-document url-prefix(chrome://) {
+    input[dir=ltr]:-moz-locale-dir(rtl) {
+        text-align: left !important
+    }
+    input:-moz-locale-dir(rtl) {
+        direction: ltr !important;
+        text-align: right !important
+    }
+}
+
+/* @-ms-viewport */
+@-ms-viewport {
+    width: device-width
+}
+
+/* @namespace */
+@namespace parsererror url(http://www.mozilla.org/newlayout/xml/parsererror.xml)
+@namespace url(http://www.w3.org/1999/xhtml)
+@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul)
+
+/* Lapys JS Elements
+    --- NOTE ---
+        The [default] attribute is used to reject
+        the given styles for the given selector.
+*/
+/* * */
+*[default]:not(audio):not(video) {
+    all: initial
+}
+*|*::backdrop {
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    -moz-top-layer: top !important
+}
+*|*:fullscreen:not(:root):not(:-moz-browser-frame) {
+    -moz-top-layer: top !important
+}
+
+/* <a> */
+a:not([default]) {
+    color: #0045FF;
+    cursor: pointer;
+    fill: #0023FF;
+    line-height: inherit;
+    outline: 0;
+    text-align: inherit;
+    stroke: #0023FF;
+    text-decoration: none;
+    -webkit-text-decoration-skip: objects
+}
+*:not(body) a {
+    /* --- NOTE ---
+            <a> elements should inherit the color of their parents.
+    */
+    color: inherit
+}
+a:active:not([default]),
+a:focus:not([default]) {
+    color: #0078FF
+}
+
+/* <abbr> */
+abbr:not([default]) {
+    text-decoration: none
+}
+abbr[abbr] {
+    cursor: help
+}
+abbr[data-title],
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+/* <acronym> */
+acronym:not([default]) {
+    display: block
+}
+
+/* <address> */
+address:not([default]) {
+    display: inline
+}
+
+/* <address>, <i>, <output>, <var> */
+address,
+i,
+output,
+var {
+    font-style: italic
+}
+
+/* --- NOTE ---
+        Lists such as these are ordered alphabetically.
+
+        <address>, <article>, <aside>,
+        <blockquote>, <body>,
+        <caption>, <center>, <col>, <colgroup>,
+        <dd>, <dir>, <div>, <dl>, <dt>,
+        <fieldset>, <figcaption>, <figure>, <footer>, <form>,
+        <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <header>, <hgroup>, <hr>, <html>,
+        <legend>, <li>, <listing>,
+        <main>, <marquee>, <menu>,
+        <nav>, <noframes>,
+        <ol>,
+        <p>, <plaintext>, <pre>,
+        <section>, <summary>,
+        <table>, <tbody>, <td>, <tfoot>, <th>, <thead>, <tr>,
+        <ul>,
+        <xmp>
+*/
+address,
+article,
+aside,
+blockquote,
+body,
+caption,
+center,
+col,
+colgroup,
+dd,
+dir,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+legend,
+li,
+listing,
+main,
+marquee,
+menu,
+nav,
+noframes,
+ol,
+p,
+plaintext,
+pre,
+section,
+summary,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+ul,
+xmp {
+    unicode-bidi: isolate
+}
+
+/* <applet> */
+applet:not([default]) {
+    background-color: #000000;
+    border-radius: 2.5px;
+    color: #FFFFFF;
+    padding: 5px
+}
+
+/* <applet>, <audio>, <embed>, <object>, <video> */
+applet,
+audio,
+embed,
+object,
+video {
+    cursor: default
+}
+
+/* <applet>, <audio>, <embed>, <img>, <object>, <video> */
+applet:not([default]),
+audio:not([default]),
+embed:not([default]),
+img:not([default]),
+object:not([default]),
+video:not([default]) {
+    max-width: 100%
+}
+
+/* <area> */
+area {
+    display: none !important
+}
+
+/* <article>, <aside>, <main> */
+article,
+aside,
+main {
+    overflow: auto;
+    resize: none
+}
+
+/*
+    <article>, <aside>,
+    <details>, <div>, <dt>,
+    <figcaption>, <footer>, <form>,
+    <header>, <hgroup>, <html>,
+    <main>,
+    <nav>,
+    <section>,
+    <summary>
+*/
+article,
+aside,
+details,
+div,
+dt,
+figcaption,
+footer,
+form,
+header,
+hgroup,
+html,
+main,
+nav,
+section,
+summary {
+    display: block
+}
+
+/* <audio> */
+audio {
+    min-height: 32px;
+    width: 300px
+}
+audio:not([controls]) {
+  display: none !important;
+  height: 0 !important
+}
+
+/* <audio>, <video> */
+audio,
+video {
+    display: inline-block;
+    outline: 1px solid
+}
+audio > xul|videocontrols,
+video > xul|videocontrols {
+    background-color: #0045FF !important
+}
+
+/* <b> */
+b {
+    /* --- NOTE ---
+            This is used to correct the font weight
+            on other platforms than Chrome and Mozila.
+    */
+    font-weight: inherit
+}
+b,
+[b] {
+    /* --- NOTE ---
+        Elements with attributes like "b" that
+        resemble inline-text elements (<b>, <i> e.t.c.) inherit
+        similar styles to those elements.
+    */
+    font-weight: 600
+}
+
+/*
+    <base>, <basefont>,
+    <datalist>,
+    <head>,
+    <meta>,
+    <script>, <style>,
+    <title>,
+    <noembed>,
+    <param>,
+    <template>
+*/
+base,
+basefont,
+datalist,
+head,
+meta,
+script,
+style,
+title,
+noembed,
+param,
+template {
+    display: none
+}
+
+/* <bdi> */
+bdi:dir(ltr),
+[dir="auto"]:dir(ltr) {
+    direction: ltr
+}
+bdi:dir(rtl),
+[dir="auto"]:dir(rtl) {
+    direction: rtl
+}
+
+/* <bdo> */
+bdo {
+    unicode-bidi: isolate-override
+}
+
+/* <big> */
+big:not([default]),
+[big] {
+    font-size: xx-large
+}
+
+/* <blockquote> */
+blockquote:not([default]) {
+    border-left: thick solid rgba(127, 127, 127, .5);
+    display: block;
+    margin: 20px 0;
+    padding: 0;
+    padding-left: 1.5rem
+}
+blockquote[cite]:not([default]),
+blockquote[type="cite"]:not([default]) {
+    border: 0;
+    border-inline-start: solid;
+    display: block;
+    margin-block-end: 5px;
+    margin-block-start: 5px;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    padding-inline-start: 5px
+}
+
+
+/* <blockquote>, <figure> */
+blockquote:not([default]),
+figure:not([default]) {
+  display: block;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-inline-end: 40px;
+  margin-inline-start: 40px
+}
+
+/* <blockquote>, <hgroup>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6> */
+blockquote:not([default]),
+hgroup:not([default]) {
+    font-family: "Calibri Light";
+    -webkit-margin-after: 1px;
+    -webkit-margin-before: 1px;
+    -webkit-margin-end: 0;
+    -webkit-margin-start: 0
+}
+
+/* <body>
+    --- NOTE ---
+        Commented declarations in the <body>
+        are optional to the user.
+*/
+body:not([default]) {
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: fadeIn;
+    animation-play-state: running;
+    animation-timing-function: ease-in;
+    box-decoration-break: slice;
+    break-after: auto;
+    break-before: auto;
+    break-inside: auto;
+    caption-sidetopclear: none;
+    color-adjust: economy;
+    color-interpolation: sRGB;
+    color-interpolation-filters: linearRGB;
+    counter-increment: none;
+    counter-reset: none;
+    fill: #FFFFFF;
+    fill-opacity: 1;
+    fill-rule: nonzero;
+    filter: none;
+    /*
+        flex-basis: auto;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 1;
+    */
+    flex-wrap: nowrap;
+    flood-color: #000000;
+    flood-opacity: 1;
+    font-language-override: normal;
+    font-family: Calibri, "Calibri Light", "Segoe UI", "Helvetica Neue", Arial,
+                        "Lucida Sans Unicode", "Microsoft Sans Serif", Roman, Script, "Segoe UI Semilight",
+                        sans-serif;
+    font-feature-settings: inherit;
+    font-kerning: auto;
+    font-size-adjust: none;
+    font-synthesis: weight style;
+    font-variant-alternates: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-variant-position: normal;
+    /* font-weight: 300; */
+    height: 100%;
+    hyphens: manual;
+    image-orientation: 0deg;
+    image-rendering: auto;
+    ime-mode: auto;
+    isolation: auto;
+    letter-spacing: normal;
+    lighting-color: #FFFFFF;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: circle;
+    margin: 0;
+    marker-end: none;
+    marker-mid: none;
+    marker-offset: auto;
+    marker-start: none;
+    mask: none;
+    mask-type: luminance;
+    mix-blend-mode: normal;
+    order: 0;
+    orphans: 1;
+    /*
+        outline-color: rgb(0, 0, 0);
+        outline-offset: 0;
+        outline-style: none;
+        outline-width: 0;
+    */
+    pointer-events: all;
+    quotes: "“" "”" "‘" "’";
+    resize: none;
+    ruby-align: space-around;
+    ruby-position: over;
+    scroll-behavior: auto;
+    scroll-snap-coordinate: none;
+    scroll-snap-destination: 0px 0px;
+    scroll-snap-points-x: none;
+    scroll-snap-points-y: none;
+    scroll-snap-type-x: none;
+    scroll-snap-type-y: none;
+    shape-rendering: auto;
+    speak: normal;
+    stop-color: #FFFFFF;
+    stop-opacity: 1;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-miterlimit: 4;
+    stroke-opacity: 1;
+    stroke-width: 1px;
+    tab-size: 8;
+    table-layout: auto;
+    text-align: start;
+    text-align-last: auto;
+    text-anchor: start;
+    text-combine-upright: none;
+    text-decoration-color: rgb(0, 0, 0);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-emphasis-color: rgb(0, 0, 0);
+    text-emphasis-position: over right;
+    text-emphasis-style: none;
+    text-indent: 0;
+    text-orientation: mixed;
+    text-overflow: clip;
+    text-overflowcliptext-rendering: auto;
+    text-rendering: auto;
+    text-security: circle;
+    text-shadow: none;
+    text-size-adjust: auto;
+    text-transform: none;
+    touch-action: auto;
+    transform: matrix(0, 0, 0, 0);
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition-property: all;
+    transition-timing-function: linear;
+    unicode-bidi: normal;
+    user-select: text;
+    vector-effect: inherit;
+    vertical-align: baseline;
+    white-space: normal;
+    widows: 1;
+    word-break: normal;
+    word-wrap: normal;
+    z-index: 0;
+    zoom: 1;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-box-align: stretch;
+    -moz-box-direction: normal;
+    -moz-box-flex: 0;
+    -moz-box-ordinal-group: 1;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: start;
+    -moz-column-count: auto;
+    -moz-column-fill: balance;
+    -moz-column-gap: 8px;
+    -moz-column-rule-color: rgba(0, 120, 255, 1);
+    -moz-column-rule-style: none;
+    -moz-column-rule-width: 0px;
+    -moz-column-width: auto;
+    -moz-float-edge: content-box;
+    -moz-force-broken-image-icon: 0;
+    -moz-image-region: auto;
+    -moz-orient: inline;
+    -moz-outline-radius-bottomleft: 0px;
+    -moz-outline-radius-bottomright: 0px;
+    -moz-outline-radius-topleft: 0px;
+    -moz-outline-radius-topright: 0px;
+    -moz-stack-sizing: stretch-to-fit;
+    -moz-tab-size: 8;
+    -moz-text-size-adjust: auto;
+    -moz-user-focus: none;
+    -moz-user-input: auto;
+    -moz-user-modify: read-only;
+    -moz-user-select: auto;
+    -moz-window-dragging: default;
+    -webkit-text-combine: none;
+    -webkit-text-decorations-in-effect: none;
+    -webkit-text-emphasis-color: inherit;
+    -webkit-text-emphasis-position: over;
+    -webkit-text-emphasis-style: none;
+    -webkit-text-fill-color: inherit;
+    -webkit-locale: "en", "en-US", "en-UK", "en-NG";
+    -webkit-text-security: none;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 1);
+    -webkit-text-stroke-width: 0px;
+    -webkit-writing-mode: horizontal-tb
+}
+
+/* <button>, <input>, <keygen>, <select>, <textarea>, Button */
+button:not([default]),
+keygen:not([default]),
+select:not([default]),
+textarea:not([default]),
+[type="button"]:not([default]),
+[type="reset"]:not([default]),
+[type="submit"]:not([default]),
+.btn:not([default]) {
+    background: #FFFFFF;
+    color: #000000;
+    display: inline-block;
+    font-family: Calibri, sans-serif;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    -webkit-appearance: button
+}
+button:not([default]),
+input:not([type]):not([default]),
+keygen:not([default]),
+select:not([default]),
+textarea:not([default]),
+[type="button"]:not([default]),
+[type="email"]:not([default]),
+[type="number"]:not([default]),
+[type="password"]:not([default]),
+[type="reset"]:not([default]),
+[type="submit"]:not([default]),
+[type="tel"]:not([default]),
+[type="text"]:not([default]),
+[type="url"]:not([default]),
+.btn:not([default]) {
+    border: 1px solid;
+    padding: 2px 5px
+}
+
+/* <button>, <keygen>, <select>, <textarea>, Button */
+button:focus,
+keygen:focus,
+select:focus,
+textarea:focus,
+.btn-psd-focus {
+    outline: 1px solid #0023FF
+}
+
+/* <button>, <select> */
+button, select {
+    text-transform: none
+}
+
+/*
+    <button>,
+    [type="button"],
+    [type="reset"],
+    [type="submit"]
+*/
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 0
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+/* <canvas> */
+canvas:not([default]) {
+    display: inline-block;
+    min-height: 150px;
+    min-width: 300px;
+    -moz-user-select: none;
+    -webkit-user-select: none
+}
+
+/* <cite> */
+cite,
+[cite] {
+    display: block;
+    min-height: 20px;
+    padding: 5px
+}
+
+/* <code> */
+code:not([default]),
+[code] {
+    background-color: #F0F0F0;
+    color: #FF2300;
+    display: inline-block;
+    margin: 1px
+}
+code::selection {
+    background-color: transparent;
+    color: #FF0000;
+    text-shadow: none
+}
+
+/* <code>, <kbd>, <tt> */
+code,
+kbd,
+tt {
+    /*
+        --- NOTE ---
+            A suitable font except "monospace"
+            should be used.
+    */
+    font-family: Consolas, monospace, monospace;
+    font-size: smaller
+}
+
+/* <default>
+        --- NOTE ---
+            This resets every CSS rule
+            on the element and its children.
+
+            The CSS reset is also coupled
+            by some Javascript to fortify the reset.
+*/
+default,
+default * {
+    all: initial !important;
+    background-color: transparent !important;
+    color: initial !important
+}
+
+/* <del> */
+del {
+    text-decoration: overline
+}
+
+/* <details> */
+details summary {
+    cursor: default;
+    display: list-item;
+    font-size: larger
+}
+details summary:active {
+    /* --- NOTE ---
+        <summary>'s are click-able.
+        So they should seem click-able.
+    */
+    cursor: pointer
+}
+details:not([default]) summary:not([default])::-webkit-details-marker {
+    /* --- NOTE ---
+        Style the -webkit- <details> marker.
+    */
+    display: inline-block;
+    height: .6em;
+    width: .6em;
+    -webkit-margin-end: 0 !important
+}
+
+/* <dfn> */
+dfn:not([default]) {
+    /* --- NOTE ---
+        <dfn>'s are not emphasis as a whole,
+        but stand-outs.
+        Hence, they are "bold" instead of "italic".
+    */
+    font-size: larger
+}
+
+/* <dir> */
+dir:not([default]) {
+    unicode-bidi: isolate
+}
+
+/* <dir>, <menu>, <ul> */
+dir:not([default]),
+menu:not([default]),
+ul:not([default]) {
+    list-style-type: circle
+}
+
+/* <dd> */
+dd:not([default]) {
+    display: block;
+    margin-inline-start: 40px
+}
+
+/* <dl> */
+dl:not([default]) {
+    list-style: none
+}
+dl dd:not([default]) {
+    text-indent: 25px;
+    -webkit-margin-start: 0
+}
+dl dt:not([default]) {
+    font-size: larger;
+    margin: 1% 0
+}
+
+/* Badge, <dl>, <ol>, <ul> */
+.bdg,
+dl li.btn.cmpnt[data-quantity]::after,
+ol li.btn.cmpnt[data-quantity]::after,
+ul li.btn.cmpnt[data-quantity]::after {
+    background-color: #0078FF;
+    border-radius: 50px;
+    color: #FFFFFF;
+    content: attr(data-quantity);
+    display: inline;
+    float: right;
+    font-size: inherit;
+    margin-left: 10px;
+    padding: .5px 5px
+}
+
+/* <dl>, <multicol>, <p> */
+dl:not([default]),
+multicol:not([default]),
+p:not([default]) {
+    display: block;
+    margin-block-end: 1.75px;
+    margin-block-start: 1.75px
+}
+
+/* <em> */
+em:not([default]),
+[i],
+[q] {
+    font-style: italic;
+    speak: literal-punctuation !important
+}
+
+/* <embed>, <iframe>, <object> */
+embed[src="#"]:not([default]),
+iframe:not([default]),
+object[data="#"]:not([default]) {
+    animation: fadeIn .5s ease-in .5s normal backwards running;
+    backface-visibility: visible;
+    border: 1px solid #000000;
+    border-image: initial;
+    display: block;
+    order: 0;
+    overflow: auto;
+    resize: scroll;
+    scroll-behavior: auto;
+    shape-rendering: auto;
+    speak: normal;
+    touch-action: auto;
+    unicode-bidi: embed;
+    user-select: text;
+    white-space: normal;
+    width: 80%
+}
+
+/* <fieldset> */
+fieldset:not([default]) {
+    border: 2px solid;
+    display: block;
+    margin-inline-end: 2px;
+    margin-inline-start: 2px;
+    max-width: 100%;
+    min-width: 0;
+    padding-block-end: .75em;
+    padding-block-start: .35em;
+    padding-inline-end: .625em;
+    padding-inline-start: .625em;
+    -webkit-margin-end: 0;
+    -webkit-margin-start: 0;
+    -webkit-padding-after: 0;
+    -webkit-padding-before: 0;
+    -webkit-padding-end: 0;
+    -webkit-padding-start: 0
+}
+fieldset:not([default]) > legend {
+    inline-size: -moz-fit-content;
+    padding-inline-end: 2px;
+    padding-inline-start: 2px
+}
+
+/* <figure> */
+figure:not([default]) {
+    display: inline-block;
+    margin: 1em 40px
+}
+
+/* <frame> */
+frame {
+    border-radius: 0 !important
+}
+
+/* <foreignObject>, <image>, <marker>, <pattern>, <svg>, <symbol> */
+foreignObject,
+image,
+marker,
+pattern,
+svg:not(:root),
+symbol {
+    overflow: hidden
+}
+
+/* <frameset> */
+frameset {
+    border: 0 !important;
+    display: block !important;
+    float: none !important;
+    overflow: hidden;
+    position: static !important
+}
+
+/* <hr> */
+hr:not([default]) {
+    background: #000000;
+    border-bottom: 1px solid;
+    box-sizing: content-box;
+    display: block;
+    height: 0;
+    max-width: 100%;
+    width: 100%
+}
+
+/* <html> */
+html {
+    border: 0;
+    display: block;
+    font-family: sans-serif;
+    line-height: 1.15;
+    outline: 0;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%
+}
+html|applet[height=""], html|applet:not([height]),
+html|embed[height=""], html|embed:not([height]),
+html|object[height=""], html|object:not([height]) {
+    height: 200px
+}
+html|applet[width=""], html|applet:not([width]),
+html|embed[width=""], html|embed:not([width]),
+html|object[width=""], html|object:not([width]) {
+    width: 240px
+}
+html|* > svg {
+    transform-origin: 50% 50% 0px
+}
+
+/* <hgroup>
+        --- NOTE ---
+            Vertically stack headers within
+            header groups.
+*/
+hgroup:not([default]) h1:not([default]),
+hgroup:not([default]) h2:not([default]),
+hgroup:not([default]) h3:not([default]),
+hgroup:not([default]) h4:not([default]),
+hgroup:not([default]) h5:not([default]),
+hgroup:not([default]) h6:not([default]) {
+    display: block
+}
+
+/* <h1> */
+h1:not([default]) {
+    font-size: 175%;
+    margin: 1rem 0
+}
+
+/* <h2> */
+h2:not([default]) {
+    font-size: 150%;
+    margin: .5rem 0
+}
+
+/* <h3> */
+h3:not([default]) {
+    font-size: 125%;
+    margin: .25rem 0
+}
+
+/* <h4> */
+h4:not([default]) {
+    font-size: 100%;
+    margin: .125rem 0
+}
+
+/* <h5> */
+h5:not([default]) {
+    font-size: 75%;
+    margin: .0825rem 0
+}
+
+/* <h6> */
+h6:not([default]) {
+    font-size: 50%;
+    margin: .04125rem 0
+}
+
+/* <h1>, <h2>, <h3>, <h4>, <h5>, <h6> */
+h1:not([default]),
+h2:not([default]),
+h3:not([default]),
+h4:not([default]),
+h5:not([default]),
+h6:not([default]) {
+    /* --- NOTE ---
+            Headers are given a lighter font.
+    */
+    font-family: "Calibri Light";
+    margin-block-end: .67em;
+    margin-block-start: .67em
+}
+
+/* <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <p> */
+h1:not([default]),
+h2:not([default]),
+h3:not([default]),
+h4:not([default]),
+h5:not([default]),
+h6:not([default]),
+p:not([default]) {
+    /* --- NOTE ---
+        Headers and paragraphs have
+        a lighter font weight.
+    */
+    font-weight: lighter;
+    orphans: 3;
+    widows: 3
+}
+
+/* <i> */
+i {
+    font-style: oblique
+}
+i {
+    font-style: italic;
+    line-height: inherit
+}
+
+/* <img> */
+img:not([default]) {
+    border: 0;
+    vertical-align: middle
+}
+
+/* <img>, <object> */
+img[usemap],
+object[usemap] {
+    color: #0045FF
+}
+
+/* <label> */
+label {
+    cursor: default
+}
+
+/* <listing> */
+listing:not([default]) {
+    display: block;
+    font-family: monospace;
+    font-size: medium;
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+    white-space: pre
+}
+
+/* <listing>, <plaintext>, <pre>, <xmp> */
+listing:not([default]),
+plaintext:not([default]),
+pre:not([default]),
+xmp:not([default]) {
+    display: block;
+    font-family: monospace;
+    margin: 0;
+    white-space: pre
+}
+
+/* <input> */
+input[orient="block"][type="range"]:not([default]) {
+    block-size: 12em;
+    inline-size: 1.3em;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    margin-block-end: .7em;
+    margin-block-start: .7em
+}
+input[orient="horizontal"][type="range"]:not([default]) {
+    height: 1.3em;
+    margin: 0 .7em;
+    width: 12em
+}
+input[orient="vertical"][type="range"]:not([default]) {
+    height: 12em;
+    margin: 0.7em 0;
+    width: 1.3em
+}
+input:not([default])[type="button"]:active,
+input:not([default])[type="checkbox"]:active,
+input:not([default])[type="color"],
+input:not([default])[type="radio"]:active,
+input:not([default])[type="reset"]:active,
+input:not([default])[type="submit"]:active {
+    /* --- NOTE ---
+            All input buttons are click-able.
+    */
+    cursor: pointer
+}
+input[type="checkbox"]:not([default]):focus,
+input[type="color"]:not([default]):focus,
+input[type="radio"]:not([default]):focus {
+    /* --- NOTE ---
+        All checkboxes, colors swatches and radios have no outline.
+    */
+    outline: 0
+}
+input[type="checkbox"]:not([default]),
+input[type="radio"]:not([default]) {
+    /* --- NOTE ---
+            Make checkboxes and radios simpler to style.
+    */
+    background: none;
+    border: 2.5px solid #FFFFFF;
+    border-radius: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25), inset 0 0 2.5px 0 rgba(0, 0, 0, .25);
+    padding: 6px;
+    opacity: .75;
+    outline: 0 !important;
+    -webkit-appearance: button
+}
+input[type="checkbox"]:active:not([default]),
+input[type="radio"]:active:not([default]) {
+    /* --- NOTE ---
+        The padding increases marginally
+        when clicked.
+    */
+    padding: 6.5px
+}
+input[type="checkbox"]:checked:not([default]),
+input[type="radio"]:checked:not([default]) {
+    /* --- NOTE ---
+            Styles for selected checkboxes and radios.
+    */
+    background: rgba(0, 255, 0, .5);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, .25), inset 0 0 0 0 transparent;
+    border-color: #00FF00;
+    opacity: 1
+}
+input[type="checkbox"]:disabled:not([default]),
+input[type="radio"]:disabled:not([default]) {
+    /*
+        --- NOTE ---
+            Styles for disabled checkboxes and radios.
+    */
+    background: rgba(255, 0, 0, .5);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, .25), inset 0 0 0 0 transparent;
+    border-color: #FF0000
+}
+input[type="color"]:not([default]) {
+    /* --- NOTE ---
+            Make color swatches simpler to style.
+    */
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, .75);
+    height: 15px;
+    outline: 0 !important;
+    padding: 0;
+    width: 15px
+}
+input[type="color"]:not([default]):-moz-system-metric(color-picker-available)::-moz-color-swatch {
+    /* --- NOTE ---
+        Style the -moz- <input type="color"> swatch.
+    */
+    border: 0 !important;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    min-height: 3px;
+    min-width: 3px;
+    width: 100%
+}
+input[type="color"]:not([default])::-webkit-color-swatch {
+    /* --- NOTE ---
+        Style the -webkit- <input type="color"> swatch.
+    */
+    border: 0;
+    border-radius: 50%
+}
+input[type="color"]:not([default])::-webkit-color-swatch-wrapper {
+    /* --- NOTE ---
+        Style the -webkit- <input type="color"> swatch container.
+    */
+    padding: 0
+}
+input[type*="date"]:not([default]),
+input[type="email"]:not([default]),
+input[type="month"]:not([default]),
+input[type="number"]:not([default]),
+input[type="password"]:not([default]),
+input[type="search"]:not([default]),
+input[type="tel"]:not([default]),
+input[type="text"]:not([default]),
+input[type="url"]:not([default]),
+input[type="week"]:not([default]),
+input[type="year"]:not([default]),
+input:not([type]) {
+    /* --- NOTE ---
+            All text-based <input>'s must seem
+            text-based (the text cursor).
+    */
+    border: 1px solid;
+    cursor: text;
+    text-align: left
+}
+input[type*="date"]:not([default]) {
+    /* --- NOTE ---
+            Default browser styles are removed here
+            for the user to change them.
+    */
+    font-family: inherit
+}
+input[type*="date"]:not([default])::before {
+    /* --- NOTE ---
+            A small snippet for date-type <input>'s.
+    */
+    border: 1px solid;
+    border-radius: 2.5px;
+    border-top-width: 5px;
+    box-shadow: 0 0 1.75px 0 rgba(0, 0, 0, .5);
+    color: rgba(0, 0, 0, .5);
+    content: "08";
+    cursor: default;
+    font-family: Calibri, sans-serif;
+    font-size: 15px;
+    height: 17.5px;
+    letter-spacing: -1px;
+    margin: 1px 1.5px 0 0;
+    pointer-events: all;
+    text-align: center;
+    width: 20px
+}
+input[type*="date"]:not([default])::-webkit-datetime-edit-day-field,
+input[type*="date"]:not([default])::-webkit-datetime-edit-month-field,
+input[type*="date"]:not([default])::-webkit-datetime-edit-year-field {
+    /* --- NOTE ---
+            Style the -webkit- date options
+            within the date <input> field.
+    */
+    font-family: inherit;
+    text-transform: uppercase
+}
+input[type="file"] {
+    border: 1px solid;
+    font-family: Calibri, sans-serif;
+    font-weight: lighter;
+    padding: 2px 5px
+}
+input[type="file"]:not([default])::-webkit-file-upload-button {
+    /* --- NOTE ---
+            Style the -webkit- <input type="file">
+            file upload button.
+    */
+    border: 1px solid;
+    color: inherit;
+    cursor: pointer;
+    font-size: 13px;
+    height: 20px;
+    padding: 2px 5px
+}
+input[type="file"]:not([default]) > xul|label {
+    direction: ltr !important;
+    letter-spacing: inherit;
+    min-inline-size: 12em;
+    padding-inline-start: 5px;
+    text-align: match-parent
+}
+input[type="file"]:not([default]) > button[type="button"] {
+    block-size: inherit;
+    cursor: pointer;
+    letter-spacing: inherit
+}
+input[type="hidden"] {
+    display: none !important
+}
+input[type="number"]:not([default]):in-range,
+:invalid:active:not(button):not(keygen):not(select):not(textarea),
+:invalid:focus:not(button):not(keygen):not(select):not(textarea) {
+    /* --- NOTE ---
+            Style for invalid value <input>'s.
+    */
+    outline-color: rgba(255, 0, 0, .25) !important
+}
+input[type="number"]:not([default]):out-of-range,
+:valid:active:not(button):not(keygen):not(select):not(textarea),
+:valid:focus:not(button, keygen) {
+    /* --- NOTE ---
+            Style for valid value <input>'s.
+    */
+    outline-color: rgba(0, 255, 0, .25) !important
+}
+input[type="number"]:not([default]) {
+    /* --- NOTE ---
+            The height of numeric <input>'s should
+            be automatic or inherited.
+    */
+    height: auto
+}
+input[type="radio"]:not([default]) {
+    border-radius: 50%
+}
+input[type="search"]:not([default]) {
+    -webkit-appearance: textfield
+}
+input:not([default]) {
+    /* --- NOTE ---
+            Regular <input> tags.
+    */
+    letter-spacing: normal;
+    line-height: normal;
+    overflow-clip-box: content-box;
+    padding: 1px;
+    text-indent: 0;
+    text-align: start;
+    text-rendering: optimizeLegibility;
+    text-shadow: none;
+    text-transform: none;
+    word-spacing: normal;
+    z-index: 3;
+    -moz-appearance: textfield;
+    -moz-user-select: text
+}
+input:not([default]):active {
+    /* --- NOTE ---
+            For the varying types of <input>,
+            activated <input>'s' cursors are not pointers.
+    */
+    cursor: default
+}
+input:not([default]):focus {
+    /* --- NOTE ---
+            Set a default for all browsers to follow
+            on focused <inputs>'s.
+    */
+    outline-offset: 0;
+    outline-style: solid;
+    outline-width: 1px
+}
+input:not([default]):focus:invalid {
+    /* --- NOTE ---
+            Style for invalid value <input>'s.
+    */
+    outline-color: rgba(255, 0, 0, .25)
+}
+input:not([default]):focus:valid {
+    /* --- NOTE ---
+            Style for valid value <input>'s.
+    */
+    outline-color: rgba(0, 255, 0, .25)
+}
+input:not([default])::placeholder,
+input:not([default]) > .anonymous-div {
+    line-height: -moz-block-height;
+    white-space: pre;
+    word-wrap: normal !important
+}
+
+/* <input>, <kbd>, <textarea> */
+input:not([default]):read-only,
+kbd:not([default]):read-only,
+textarea:not([default]):read-only {
+    /* --- NOTE ---
+            Make these elements stand out
+            (in the sense that they receive user input).
+
+            Also alternate the color of their outline
+            based on their status.
+    */
+    outline-color: #EFEFEF
+}
+kbd:not([default]):required,
+textarea:not([default]):required {
+    outline-color: #00ABFF
+}
+
+/* <input>, <select>, <textarea> */
+input:not([default]):-webkit-autofill,
+select:not([default]):-webkit-autofill,
+textarea:not([default]):-webkit-autofill {
+    /* --- NOTE ---
+            Style for -webkit- autofill background color.
+    */
+    background-color: inherit;
+    background-image: inherit;
+    color: inherit
+}
+
+/* <input>, <textarea> */
+input:not([default])::placeholder,
+textarea:not([default])::placeholder {
+    display: inline-block !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    resize: none !important
+}
+input:not([default])::placeholder,
+input > .anonymous-div,
+textarea::not([default]):placeholder,
+textarea > .anonymous-div {
+    display: inline-block;
+    border: 0 !important;
+    ime-mode: inherit;
+    margin: 0;
+    padding: inherit !important;
+    overflow: auto;
+    overflow-clip-box: inherit;
+    resize: inherit;
+    text-decoration: inherit;
+    text-decoration-color: inherit;
+    text-decoration-style: inherit;
+    -moz-control-character-visibility: visible
+}
+
+/* <input>, <optgroup>, <option>, <select>, <textarea> */
+input:disabled,
+optgroup:disabled,
+option:disabled,
+select:disabled:disabled,
+textarea:disabled {
+    /* --- NOTE ---
+            These disabled elements inherit
+            their parents cursor to seem not click-able.
+    */
+    cursor: inherit;
+    -moz-user-input: disabled
+}
+
+/* <ins> */
+ins {
+    text-decoration: underline
+}
+
+/* <legend> */
+legend {
+    /* --- NOTE ---
+            This is used to correct the display
+            on other platforms than Chrome and Mozila.
+    */
+    display: block
+}
+legend {
+    border: 0;
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    font-size: xx-large;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+/* <li> */
+li {
+    display: list-item;
+    text-align: match-parent
+}
+
+/* <kbd> */
+kbd:not([default]) {
+    background: #232323;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: inherit;
+    padding: 2px 5px;
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+/* <marquee> */
+marquee:not([default]) {
+    display: inline-block;
+    inline-size: -moz-available;
+    text-align: start;
+    vertical-align: text-bottom
+}
+marquee[direction="down"]:not([default]),
+marquee[direction="up"]:not([default]) { block-size: 200px }
+
+/* <mark> */
+mark:not([default]) {
+    /* --- NOTE ---
+            Markers aren't yellow, they now resemble
+            selected text. Hence, marking them.
+    */
+    background: #0078FF;
+    color: #FFFFFF;
+    padding: 0;
+    text-shadow: none
+}
+mark:not([default]):read-write::selection {
+    background-color: #FF7823;
+    color: #FFFFFF;
+    text-shadow: none
+}
+mark:not([default])::selection {
+    /* --- NOTE ---
+            <mark>'s must not have a selection
+            background.
+    */
+    background-color: transparent;
+    color: #FFFFFF;
+    text-shadow: none
+}
+
+/* <menu> */
+menu[type="context"]:not([default]) {
+    display: none !important
+}
+
+/* <meter> */
+meter:not([default]) {
+    background: #FFFFFF;
+    display: inline-block;
+    height: 15px;
+    outline: 1px solid #000000;
+    width: 300px;
+    -moz-appearance: meterbar;
+    -webkit-appearance: meter
+}
+meter:not([default])::-moz-meter-bar {
+    /* --- NOTE ---
+            Style -moz- meter bars.
+    */
+    display: inline-block !important;
+    float: none !important;
+    height: 100%;
+    overflow: visible !important;
+    position: static !important;
+    -moz-appearance: meterchunk
+}
+meter:not([default])::-moz-meter-optimum::-moz-meter-bar {
+    /* --- NOTE ---
+            Style default value -moz- meter bars.
+    */
+    background: #00FF00 !important
+}
+meter:not([default])::-moz-meter-sub-optimum::-moz-meter-bar {
+    /* --- NOTE ---
+            Style low value -moz- meter bars.
+    */
+    background: #FFFF00 !important
+}
+meter:not([default])::-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    /* --- NOTE ---
+            Style extreme value -moz- meter bars.
+    */
+    background: #FF0000 !important
+}
+meter:not([default])::-webkit-meter-bar {
+    /* --- NOTE ---
+            Style -webkit- meter bars.
+    */
+    background: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    -webkit-user-modify: read-only !important
+}
+meter:not([default])::-webkit-meter-even-less-good-value {
+    /* --- NOTE ---
+            Style extreme value -webkit- meter bars.
+    */
+   background: #FF0000;
+    height: 100%;
+    -webkit-user-modify: read-only !important
+}
+meter:not([default])::-webkit-meter-inner-element {
+    /* --- NOTE ---
+            Style -webkit- meter bars value.
+    */
+    height: 100%;
+    width: 100%;
+    -webkit-appearance: inherit;
+    -webkit-user-modify: read-only !important
+}
+meter:not([default])::-webkit-meter-optimum-value {
+    /* --- NOTE ---
+            Style default value -webkit- meter bars.
+    */
+    background: #0F0;
+    height: 100%;
+    -webkit-user-modify: read-only !important
+}
+meter:not([default])::-webkit-meter-suboptimum-value {
+    /* --- NOTE ---
+            Style low value -webkit- meter bars.
+    */
+    background: #FF0;
+    height: 100%;
+    -webkit-user-modify: read-only !important
+}
+
+/* <nobr> */
+nobr:not([default]) {
+    white-space: nowrap
+}
+
+/* <optgroup> */
+optgroup {
+    display: block;
+    float: none !important;
+    font-weight: bold;
+    line-height: normal !important;
+    position: static !important;
+    text-indent: 0;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+    -moz-user-select: none
+}
+optgroup:before {
+    content: attr(label);
+    display: block
+}
+optgroup > option {
+    padding-inline-start: 20px
+}
+
+/* <option> */
+option {
+    display: block;
+    float: none !important;
+    line-height: normal !important;
+    min-block-size: 1em;
+    position: static !important;
+    text-align: match-parent;
+    text-indent: 0;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+    -moz-user-select: none
+}
+
+/* <p> */
+p:not([default]) {
+    -webkit-margin-after: 0;
+    -webkit-margin-before: 0
+}
+
+/* <parsererror> */
+parsererror|parsererror {
+    border-width: thin;
+    color: #000;
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 1em;
+    padding: 1em;
+    font-size: 14pt;
+    white-space: pre
+}
+parsererror|sourcetext {
+    display: block;
+    font-family: -moz-fixed;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    white-space: pre
+}
+
+/* <plaintext>, <pre> */
+plaintext:not([default]),
+pre:not([default]) {
+    background: #CECECE;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: smaller;
+    margin: 0 auto;
+    padding: .25%;
+    page-break-inside: avoid
+}
+
+/* <pre> */
+pre:not([default]) {
+    font-family: monospace;
+    overflow: auto
+}
+
+/* <pre>, <span> */
+pre[_moz_quote="true"]:not([default]),
+span[_moz_quote="true"]:not([default]) {
+    color: #00F
+}
+
+/* <pre>, <textarea> */
+pre[dir="auto"]:not([default]),
+textarea[dir="auto"]:not([default]) {
+    unicode-bidi: plaintext
+}
+
+/* <progress> */
+progress:not([default]) {
+    display: block;
+    height: 15px;
+    display: inline-block;
+    outline: 1px solid #000;
+    vertical-align: baseline;
+    width: 300px;
+    -moz-appearance: progressbar
+}
+progress[value]:not([default]) {
+    appearance: none;
+    background-color: #FFFFFF;
+    min-height: 3px;
+    min-width: 5px;
+    max-height: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none
+}
+progress[value]:not([default])::-moz-progress-bar {
+    /* --- NOTE ---
+            Style -moz- progress bars.
+    */
+    background-color: #0000FF;
+    object-fit: contain;
+    overflow: hidden
+}
+progress[value]:not([default])::-webkit-progress-bar {
+    /* --- NOTE ---
+            Style -webkit- progress bars.
+    */
+    background-color: transparent;
+    object-fit: contain;
+    overflow: hidden
+}
+progress[value]:not([default])::-webkit-progress-value {
+    /* --- NOTE ---
+            Style -webkit- progress bar values.
+    */
+    background-color: #0000FF
+}
+
+/* <q> */
+q {
+    display: inline;
+    font-style: italic;
+    padding: 0
+}
+q:not([default])::after,
+[q]::after {
+    /* --- NOTE ---
+            Special characters are not rendered;
+            They are manually inputed (like below).
+    */
+    content: "”" !important
+}
+q:not([default])::before,
+[q]::before {
+    content: "“" !important
+}
+[data-quotes="false"] q::after,
+q[data-quotes="false"]:not([default])::after {
+    /*
+        --- NOTE ---
+            Quotes can be "turned off" in
+            <q> elements.
+    */
+    content: ""
+}
+[data-quotes="false"] q::before,
+q[data-quotes="false"]:not([default])::before {
+    content: ""
+}
+[data-quotes="single"] q::after,
+q[data-quotes="single"]:not([default])::after {
+    /*
+        --- NOTE ---
+            Quotes can be singled in
+            <q> elements.
+    */
+    content: "’" !important
+}
+[data-quotes="single"] q::before,
+q[data-quotes="single"]:not([default])::before {
+    content: "‘" !important
+}
+
+/* <ruby> */
+ruby {
+    display: ruby;
+    speak: literal-punctuation;
+    unicode-bidi: isolate
+}
+ruby * {
+    unicode-bidi: isolate
+}
+ruby rb {
+    display: ruby-base;
+    white-space: nowrap
+}
+ruby rp {
+    display: none
+}
+ruby rt {
+    display: ruby-text
+}
+ruby rtc {
+    display: ruby-text-container
+}
+ruby rt,
+ruby rtc {
+    line-height: 1;
+    text-emphasis: none;
+    white-space: nowrap
+}
+ruby rt:lang(zh),
+ruby rtc:lang(zh) {
+    ruby-align: center
+}
+
+/* <samp> */
+samp {
+    /* --- NOTE ---
+            A nice font should be used for
+            sample text.
+    */
+    font-family: Cambria, "Palatino Linotype", monospace
+}
+
+/* <select> */
+select:empty {
+    inline-size: 2.5em
+}
+select:not([default]) {
+    border-width: 1.5px;
+    box-sizing: border-box;
+    cursor: default;
+    display: inline-block;
+    line-height: normal !important;
+    margin: 0;
+    overflow: -moz-hidden-unscrollable;
+    overflow-clip-box: padding-box !important;
+    page-break-inside: avoid;
+    text-align: start;
+    text-indent: 0;
+    text-shadow: none;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+    -moz-appearance: menulist;
+    -moz-user-select: none
+}
+select:not(:-internal-list-box) {
+    visibility: visible !important
+}
+select[size]:not([default]),
+select[multiple]:not([default]),
+select[multiple][size]:not([default]) {
+    padding-block-end: 1px;
+    padding-block-start: 1px;
+    padding-inline-end: 0;
+    padding-inline-start: 0;
+    vertical-align: text-bottom;
+    -moz-appearance: listbox
+}
+select[size="0"]:not([default]),
+select[size="1"]:not([default]) {
+    padding: 0;
+    vertical-align: baseline;
+    -moz-appearance: menulist
+}
+select:not([default]) > button {
+    block-size: 100% !important;
+    box-sizing: border-box !important;
+    inline-size: 12px;
+    position: static !important;
+    vertical-align: top !important;
+    white-space: nowrap;
+    -moz-appearance: menulist-button
+}
+select:not([default]) > option {
+    padding-block-end: 0;
+    padding-block-start: 0;
+    padding-inline-end: 5px;
+    padding-inline-start: 3px
+}
+
+/* <small> */
+small,
+[small] {
+    font-size: 80%
+}
+
+/* <spacer> */
+spacer {
+    float: none !important;
+    margin: 0 5%;
+    position: static !important
+}
+
+/* <span> */
+span {
+    display: inline;
+    letter-spacing: normal;
+    word-spacing: normal
+}
+
+/* <strong> */
+strong {
+    /* --- NOTE ---
+            This is used to correct the font weight
+            on other platforms than Chrome and Mozila.
+    */
+    font-weight: inherit
+}
+strong {
+    font-weight: 600
+}
+
+/* <sub> */
+sub {
+    bottom: -.25em
+}
+
+/* <sup> */
+sup {
+    top: -.5em
+}
+
+/* <sub>, <sup> */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+/* <svg> */
+svg * {
+    transform-origin: 0 0 0
+}
+
+/* <table> */
+table {
+    border-spacing: 2px;
+    border-collapse: separate;
+    box-sizing: border-box;
+    display: table;
+    text-indent: 0
+}
+table[align="left"] {
+    float: left
+}
+table[align="right"] {
+    float: right;
+    text-align: start
+}
+table col {
+    display: table-column
+}
+table colgroup {
+    display: table-column-group
+}
+table tbody {
+    display: table-row-group
+}
+table td {
+    display: table-cell;
+    padding: 2px;
+    text-align: inherit
+}
+table tfoot {
+    display: table-footer-group
+}
+table th {
+    display: table-cell;
+    font-style: italic;
+    font-weight: normal;
+    padding: 4px
+}
+table thead {
+    display: table-header-group
+}
+table tr {
+    display: table-row
+}
+table tbody,
+table tfoot,
+table thead,
+table > tr {
+    vertical-align: middle
+}
+table td,
+table th,
+table tr {
+    vertical-align: inherit
+}
+table[bordercolor] > * > tr,
+table[bordercolor] > * > tr > td,
+table[bordercolor] > * > tr > th,
+table[bordercolor] > col,
+table[bordercolor] > colgroup,
+table[bordercolor] > tbody,
+table[bordercolor] > thead,
+table[bordercolor] > tfoot,
+table[bordercolor] > tr,
+table[bordercolor]  > tr > td,
+table[bordercolor]  > tr > th {
+    border-color: inherit
+}
+
+/* <textarea> */
+textarea:not([default]) {
+    letter-spacing: normal;
+    margin-block-end: 1px;
+    margin-block-start: 1px;
+    max-height: 500px;
+    max-width: 100%;
+    min-height: 40px;
+    min-width: 180px;
+    padding-inline-end: 1px;
+    padding-inline-start: 1px;
+    overflow: auto;
+    overflow-clip-box: content-box;
+    resize: both;
+    text-align: start;
+    text-indent: 0;
+    text-rendering: optimizeLegibility;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: text-bottom;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-wrap: break-word;
+    -moz-appearance: textfield-multiline;
+    -moz-user-select: text
+}
+textarea:active:not([default]) {
+    transition: 0
+}
+textarea:not([default])::placeholder {
+    white-space: pre-wrap !important
+}
+textarea > scrollbar {
+    cursor: default
+}
+
+/* <time> */
+time {
+    display: inline-block
+}
+
+/* <u> */
+u,
+[u] {
+    text-decoration: underline
+}
+
+/* <ul> */
+ul {
+    padding: 0
+}
+
+/* <video> */
+video {
+    max-width: 95%;
+    object-fit: contain !important
+}
+video > img:-moz-native-anonymous {
+    object-fit: inherit !important;
+    object-position: inherit !important
+}
+
+/* <xmp> */
+xmp {
+    display: block;
+    font-family: monospace;
+    margin-block-end: .5%;
+    margin-block-start: .5%;
+    white-space: pre
+}
+/* [contenteditable], :focus, :host, :read-write */
+[contenteditable="false"]:not([default]),
+:focus,
+:host {
+    /* --- NOTE ---
+            Kill all preset outlines for focused elements
+            for users to style their own.
+    */
+    outline: 0
+}
+[contenteditable="true"]:not([default])::selection,
+:read-write:not([default])::selection {
+    /* --- NOTE ---
+            Editable text takes an orange outset.
+    */
+    background-color: #F72;
+    color: #FFF;
+    text-shadow: none
+}
+[contenteditable="true"][default]:not([default])::selection,
+[default]::selection,
+:not([default])::selection {
+    /* --- NOTE ---
+            Static text takes a blue outset.
+    */
+    background-color: #07F;
+    color: #FFF;
+    text-shadow: none
+}
+/* [data-hr], [hr], Border-Bottom */
+[data-hr]:not([default]),
+[hr]:not([default]),
+.bdr-b:not([default]) {
+    /* --- NOTE ---
+            Elements with bottom borders.
+    */
+    border-bottom-width: 1px;
+    border-bottom-style: solid
+}
+/* [dir] */
+[dir="ltr"] {
+    direction: ltr
+}
+[dir="rtl"] {
+    direction: rtl
+}
+/* [hidden] */
+[hidden] {
+    display: none;
+    opacity: .675
+}
+
+/* Lapys JS Class Sets
+    --- NOTE ---
+        For common & useful CSS declarations only.
+*/
+/* All Preset */
+.a-initial {
+    all: initial !important
+}
+.a-inherit {
+    all: inherit !important
+}
+.a-unset {
+    all: unset !important
+}
+/* Align Preset */
+    /* Align Content Preset */
+    .al-c-cntr {
+        align-content: center !important
+    }
+    .al-c-flxe {
+        align-content: flex-end !important
+    }
+    .al-c-flxs {
+        align-content: flex-start !important
+    }
+    .al-c-inherit {
+        align-content: inherit !important
+    }
+    .al-c-strc {
+        align-content: stretch !important
+    }
+    .al-c-spar {
+        align-content: space-around !important
+    }
+    .al-c-spbt {
+        align-content: space-between !important
+    }
+    /* Align Items Preset */
+    .al-i-cntr {
+        align-items: center !important
+    }
+    .al-i-flxe {
+        align-items: flex-end !important
+    }
+    .al-i-flxs {
+        align-items: flex-start !important
+    }
+    .al-i-inherit {
+        align-items: inherit !important
+    }
+    .al-i-strc {
+        align-items: stretch !important
+    }
+    /* Align Self Preset */
+    .al-s-bsln {
+        align-self: baseline !important
+    }
+    .al-s-cntr {
+        align-self: center !important
+    }
+    .al-s-flxe {
+        align-self: flex-end !important
+    }
+    .al-s-flxs {
+        align-self: flex-start !important
+    }
+    .al-s-inherit {
+        align-self: inherit !important
+    }
+    .al-s-strc {
+        align-self: stretch !important
+    }
+/* Animation Preset */
+    /* Animation Delay Preset */
+    .an-d-0 {
+        animation-delay: 0s !important
+    }
+    .an-d-1 {
+        animation-delay: .5s !important
+    }
+    .an-d-2 {
+        animation-delay: 1s !important
+    }
+    .an-d-3 {
+        animation-delay: 1.5s !important
+    }
+    .an-d-4 {
+        animation-delay: 2s !important
+    }
+    .an-d-5 {
+        animation-delay: 2.5s !important
+    }
+    .an-d-inherit {
+        animation-delay: inherit !important
+    }
+    .an-d-initial {
+        animation-delay: initial !important
+    }
+    /* Animation Direction Preset */
+    .an-dir-a {
+        animation-direction: alternate !important 
+    }
+    .an-dir-ar {
+        animation-direction: alternate-reverse !important
+    }
+    .an-dir-inherit {
+        animation-direction: inherit !important
+    }
+    .an-dir-initial {
+        animation-direction: initial !important
+    }
+    .an-dir-r {
+        animation-direction: reverse !important
+    }
+    /* Animation Fill-Mode Preset */
+    .an-f-b {
+        animation-fill-mode: backwards !important
+    }
+    .an-f-f {
+        animation-fill-mode: forwards !important
+    }
+    .an-f-inherit {
+        animation-fill-mode: inherit !important
+    }
+    .an-f-initial {
+        animation-fill-mode: initial !important
+    }
+    /* Animation Play-State Preset */
+    .an-p-inherit {
+        animation-play-state: inherit !important
+    }
+    .an-p-initial {
+        animation-play-state: initial !important
+    }
+    .an-p-p {
+        animation-play-state: paused !important
+    }
+    .an-p-r {
+        animation-play-state: running !important
+    }
+    /* Animation Timing-Function Preset */
+    .an-s-e {
+        /* --- NOTE ---
+                Animation style is ease.
+        */
+        animation-timing-function: ease !important
+    }
+    .an-s-ei {
+        /* --- NOTE ---
+                Animation style is ease-in.
+        */
+        animation-timing-function: ease-in !important
+    }
+    .an-s-eo {
+        /* --- NOTE ---
+                Animation style is ease-out.
+        */
+        animation-timing-function: ease-out !important
+    }
+    .an-s-eio {
+        /* --- NOTE ---
+                Animation style is ease-in-out.
+        */
+        animation-timing-function: ease-in-out !important
+    }
+    .an-s-foli {
+        /* --- NOTE ---
+                Animation style is fast-out-linear-in.
+        */
+        animation-timing-function: cubic-bezier(.4, 0, 1, 1) !important
+    }
+    .an-s-fosi {
+        /* --- NOTE ---
+                Animation style is fast-out-slow-in.
+        */
+        animation-timing-function: cubic-bezier(.4, 0, .2, 1) !important
+    }
+    .an-s-ib {
+        /* --- NOTE ---
+                Animation style is in-back.
+        */
+        animation-timing-function: cubic-bezier(.6, -.28, .74, .05) !important
+    }
+    .an-s-ic {
+        /* --- NOTE ---
+                Animation style is in-cubic.
+        */
+        animation-timing-function: cubic-bezier(.55, .06, .68, .19) !important
+    }
+    .an-s-inherit {
+        /* --- NOTE ---
+                Animation style is inherited.
+        */
+        animation-timing-function: inherit !important
+    }
+    .an-s-iob {
+        /* --- NOTE ---
+                Animation style is ease in-out-back.
+        */
+        animation-timing-function: cubic-bezier(.68, -.55, .27, 1.55) !important
+    }
+    .an-s-ioc {
+        /* --- NOTE ---
+                Animation style is in-out-cubic.
+        */
+        animation-timing-function: cubic-bezier(.65, .05, .36, 1) !important
+    }
+    .an-s-ioq {
+        /* --- NOTE ---
+                Animation style is in-out-quadratic.
+        */
+        animation-timing-function: cubic-bezier(.46, .03, .52, .96) !important
+    }
+    .an-s-ios {
+        /* --- NOTE ---
+                Animation style is in-out-sine.
+        */
+        animation-timing-function: cubic-bezier(.45, .05, .55, .95) !important
+    }
+    .an-s-iq {
+        /* --- NOTE ---
+                Animation style is in-quadratic.
+        */
+        animation-timing-function: cubic-bezier(.55, .09, .68, .53) !important
+    }
+    .an-s-is {
+        /* --- NOTE ---
+                Animation style is in-sine.
+        */
+        animation-timing-function: cubic-bezier(.47, 0, .75, .72) !important
+    }
+    .an-s-lnr {
+        /* --- NOTE ---
+                Animation style is linear.
+        */
+        animation-timing-function: linear !important
+    }
+    .an-s-losi {
+        /* --- NOTE ---
+                Animation style is linear-out-sine-in.
+        */
+        animation-timing-function: cubic-bezier(0, 0, .2, 1) !important
+    }
+    .an-s-none {
+        /* --- NOTE ---
+                Animation style is null.
+        */
+        animation-timing-function: none !important
+    }
+    .an-s-ob {
+        /* --- NOTE ---
+                Animation style is out-back.
+        */
+        animation-timing-function: cubic-bezier(.18, .89, .32, 1.28) !important
+    }
+    .an-s-oc {
+        /* --- NOTE ---
+                Animation style is out-cubic.
+        */
+        animation-timing-function: cubic-bezier(.22, .61, .36, 1) !important
+    }
+    .an-s-oq {
+        /* --- NOTE ---
+                Animation style is out-quadratic.
+        */
+        animation-timing-function: cubic-bezier(.25, .46, .45, .94) !important
+    }
+    .an-s-os {
+        /* --- NOTE ---
+                Animation style is out-sine.
+        */
+        animation-timing-function: cubic-bezier(.39, .58, .57, 1) !important
+    }
+    .an-s-q {
+        /* --- NOTE ---
+                Animation style is quartic.
+        */
+        animation-timing-function: cubic-bezier(.77, 0, .18, .1) !important
+    }
+    /* Animation Duration Preset */
+    .an-time-0 {
+        animation-duration: 0s !important
+    }
+    .an-time-1 {
+        animation-duration: .5s !important
+    }
+    .an-time-2 {
+        animation-duration: 1s !important
+    }
+    .an-time-3 {
+        animation-duration: 1.5s !important
+    }
+    .an-time-4 {
+        animation-duration: 2s !important
+    }
+    .an-time-5 {
+        animation-duration: 2.5s !important
+    }
+    .an-time-inherit {
+        animation-duration: inherit !important
+    }
+    .an-time-initial {
+        animation-duration: initial !important
+    }
+/* Block Preset */
+.b-inherit {
+    block: inherit !important
+}
+    /* Block Size Preset */
+    .b-s-inherit {
+        block-size: inherit !important
+    }
+/* Bottom Preset */
+.b-0 {
+    bottom: 0 !important
+}
+/* Border Preset */
+.bdr {
+    border: 1px solid;
+    border-image: initial;
+    border-radius: 0;
+    border-spacing: 0
+}
+.bdr-inherit {
+    border: inherit !important;
+    border-image: inherit !important;
+    border-radius: inherit !important;
+    border-spacing: inherit !important
+}
+.bdr-none {
+    border: 0 !important;
+    border-image: initial !important;
+    border-radius: 0 !important;
+    border-spacing: 0 !important
+}
+    /* Border Bottom Preset */
+    .bdr-b-inherit {
+        border-bottom-color: inherit !important;
+        border-bottom-style: inherit !important;
+        border-bottom-width: inherit !important
+    }
+        /* Border Bottom Radius Preset */
+            /* Border Bottom-Left Radius Preset */
+            .bdr-bl-rd,
+            .bdr-bl-rd-50 {
+                border-bottom-left-radius: 50% !important
+            }
+            .bdr-bl-rd-inherit {
+                border-bottom-left-radius: inherit !important
+            }
+            .bdr-bl-rd-0 {
+                border-bottom-left-radius: 0 !important
+            }
+            /* Border Bottom-Right Radius Preset */
+            .bdr-br-rd,
+            .bdr-br-rd-50 {
+                border-bottom-right-radius: 50% !important
+            }
+            .bdr-br-rd-inherit {
+                border-bottom-right-radius: inherit !important
+            }
+            .bdr-br-rd-0 {
+                border-bottom-right-radius: 0 !important
+            }
+        /* Border Bottom Style Preset */
+        .bdr-b-s-dsh {
+            border-bottom-style: dashed !important
+        }
+        .bdr-b-s-dot {
+            border-bottom-style: dotted !important
+        }
+        .bdr-b-s-dbl {
+            border-bottom-style: double !important
+        }
+        .bdr-b-s-grv {
+            border-bottom-style: groove !important
+        }
+        .bdr-b-s-hid {
+            border-bottom-style: hidden !important
+        }
+        .bdr-b-s-inherit {
+            border-bottom-style: inherit !important
+        }
+        .bdr-b-s-ins {
+            border-bottom-style: inset !important
+        }
+        .bdr-b-s-out {
+            border-bottom-style: outset !important
+        }
+        .bdr-b-s-rdg {
+            border-bottom-style: ridge !important
+        }
+        .bdr-b-s-sld {
+            border-bottom-style: solid !important
+        }
+        /* Border Bottom Width Preset */
+        .bdr-b-w-inherit {
+            border-bottom-width: inherit !important
+        }
+        .bdr-b-w-m {
+            border-bottom-width: medium !important
+        }
+        .bdr-b-w-tk {
+            border-bottom-width: thin !important
+        }
+        .bdr-b-w-tn {
+            border-bottom-width: thin !important
+        }
+    /* Border Color Preset
+            --- NOTE ---
+                The Lapys JS Color Rotary is used here.
+                Check the documentation or "guide.txt" file for more information.
+    */
+        /* Aqua */
+        .bdr-c-aq,
+        .bdr-c-aqua {
+            border-color: #0078FF !important
+        }
+        /* Beige */
+        .bdr-c-bge,
+        .bdr-c-beige {
+            border-color: #F9ECC4 !important
+        }
+        /* Black */
+        .bdr-c-black,
+        .bdr-c-k {
+            border-color: #000000 !important
+        }
+        /* Blood Red */
+        .bdr-c-bld,
+        .bdr-c-blood,
+        .bdr-c-blud {
+            border-color: #CC0000 !important
+        }
+        /* Blue */
+        .bdr-c-b,
+        .bdr-c-blue {
+            border-color: #0000FF !important
+        }
+        /* Light Blue */
+        .bdr-c-bg,
+        .bdr-c-gb,
+        .bdr-c-lgtb,
+        .bdr-c-skyb,
+        .bdr-c-skyblue {
+            border-color: #00FFFF !important
+        }
+        /* White */
+        .bdr-c-bgr,
+        .bdr-c-brg,
+        .bdr-c-ckmy,
+        .bdr-c-ckym,
+        .bdr-c-cmky,
+        .bdr-c-cmyk,
+        .bdr-c-cymk,
+        .bdr-c-cykm,
+        .bdr-c-gbr,
+        .bdr-c-grb,
+        .bdr-c-kcmy,
+        .bdr-c-kcym,
+        .bdr-c-kmcy,
+        .bdr-c-kmyc,
+        .bdr-c-kycm,
+        .bdr-c-kymc,
+        .bdr-c-mcyk,
+        .bdr-c-mcky,
+        .bdr-c-mkcy,
+        .bdr-c-mkyc,
+        .bdr-c-myck,
+        .bdr-c-mykc,
+        .bdr-c-rbg,
+        .bdr-c-rgb,
+        .bdr-c-w,
+        .bdr-c-white,
+        .bdr-c-ycmk,
+        .bdr-c-yck,
+        .bdr-c-ykcm,
+        .bdr-c-ykmc,
+        .bdr-c-ymck,
+        .bdr-c-ymkc {
+            border-color: #FFFFFF !important
+        }
+        /* Light Red */
+        .bdr-c-br,
+        .bdr-c-lgtr,
+        .bdr-c-m,
+        .bdr-c-pink,
+        .bdr-c-rb {
+            border-color: #FF00FF !important
+        }
+        /* Brown */
+        .bdr-c-brwn,
+        .bdr-c-brown {
+            border-color: #996633 !important
+        }
+        /* Cyan */
+        .bdr-c-c,
+        .bdr-c-cyan {
+            border-color: #00FFCC !important
+        }
+        /* Dark Blue */
+        .bdr-c-darkblue,
+        .bdr-c-dkb {
+            border-color: #000078 !important
+        }
+        /* Dark Grey */
+        .bdr-c-darkgray,
+        .bdr-c-darkgrey,
+        .bdr-c-dkgry {
+            border-color: #555555 !important
+        
+        }
+        /* Dark Green */
+        .bdr-c-darkgreen,
+        .bdr-c-dkg,
+        .bdr-c-dkgrn,
+        .bdr-c-marsh {
+            border-color: #336600 !important
+        }
+        /* Dark Red */
+        .bdr-c-darkred,
+        .bdr-c-dkr,
+        .bdr-c-wine {
+            border-color: #780000 !important
+        }
+        /* Whitish-Gray */
+        .bdr-c-egg,
+        .bdr-c-whtesmk,
+        .bdr-c-whitesmoke {
+            border-color: #EEEEEE !important
+        }
+        /* Forest Green */
+        .bdr-c-forest {
+            border-color: #007800 !important
+        }
+        /* Gold */
+        .bdr-c-gld,
+        .bdr-c-gold {
+           border-color: #EEEE00 !important
+        }
+        /* Granite Gray */
+        .bdr-c-grnte,
+        .bdr-c-granite {
+            border-color: #E5E4E2 !important
+        }
+        /* Green */
+        .bdr-c-g,
+        .bdr-c-green {
+            border-color: #00FF00 !important
+        }
+        /* Yellow */
+        .bdr-c-gr,
+        .bdr-c-rg,
+        .bdr-c-simpson,
+        .bdr-c-y,
+        .bdr-c-yellow {
+            border-color: #FFFF00 !important
+        }
+        /* Gray */
+        .bdr-c-gray,
+        .bdr-c-grey,
+        .bdr-c-gry {
+            border-color: #787878 !important
+        }
+        /* Hot Pink */
+        .bdr-c-htpnk,
+        .bdr-c-hotpink {
+            border-color: #FF34FF !important
+        }
+        /* --- NOTE ---
+            Inherited value.
+        */
+        .bdr-c-inherit {
+            border-color: inherit !important
+        }
+        /* Indigo */
+        .bdr-c-indg,
+        .bdr-c-indigo {
+            border-color: #3F48CC !important
+        }
+        /* Lapis Lazuli Blue */
+        .bdr-c-l,
+        .bdr-c-lapis {
+            border-color: #0023FF !important
+        }
+        /* Light Green */
+        .bdr-c-lgtg {
+            border-color: #A6FFA6 !important
+        }
+        /* Lime */
+        .bdr-c-lime {
+            border-color: #B5E61D !important
+        }
+        /* Light Gray */
+        .bdr-c-lightgray,
+        .bdr-c-lightgrey,
+        .bdr-c-lgtgry {
+            border-color: #AAAAAA !important
+        }
+        /* Magenta */
+        .bdr-c-mgnt,
+        .bdr-c-magenta {
+            border-color: #CC00CC !important
+        }
+        /* Navy Blue */
+        .bdr-c-nvy,
+        .bdr-c-navy {
+            border-color: #342D7E !important
+        }
+        /* Olive Green */
+        .bdr-c-olv,
+        .bdr-c-olive {
+            border-color: #787800 !important
+        }
+        /* Orange */
+        .bdr-c-orng,
+        .bdr-c-orange {
+            border-color: #FF7800 !important
+        }
+        /* Platinum Gray */
+        .bdr-c-pltn,
+        .bdr-c-platinum {
+            border-color: #BCC6CC !important
+        }
+        /* Purple */
+        .bdr-c-purple,
+        .bdr-c-vlt,
+        .bdr-c-violet {
+            border-color: #7800FF !important
+        }
+        /* Red */
+        .bdr-c-r,
+        .bdr-c-red {
+            border-color: #FF0000 !important
+        }
+        /* Rose Pink */
+        .bdr-c-rose {
+            border-color: #FFAEC9 !important
+        }
+        /* Slate Gray*/
+        .bdr-c-slate {
+            border-color: #646D7E !important
+        }
+        /* Teal */
+        .bdr-c-tl,
+        .bdr-c-teal {
+            border-color: #00AAAA !important
+        }
+        /* Transparent */
+        .bdr-c-trns {
+            border-color: transparent !important
+        }
+        /* Turquoise */
+        .bdr-c-trquois,
+        .bdr-c-turquoise {
+            border-color: #00A2E8 !important
+        }
+        /*  "Violent" */
+        .bdr-c-vlnt,
+        .bdr-c-violent {
+            border-color: #CC0078 !important
+        }
+
+    /* Border Left Preset */
+    .bdr-l {
+        border-left-style: solid;
+        border-left-width: 1px
+    }
+    .bdr-l-inherit {
+        border-left-color: inherit !important;
+        border-left-style: inherit !important;
+        border-left-width: inherit !important
+    }
+        /* Border Left Style Preset */
+        .bdr-l-s-dsh {
+            border-left-style: dashed !important
+        }
+        .bdr-l-s-dot {
+            border-left-style: dotted !important
+        }
+        .bdr-l-s-dbl {
+            border-left-style: double !important
+        }
+        .bdr-l-s-grv {
+            border-left-style: groove !important
+        }
+        .bdr-l-s-hid {
+            border-left-style: hidden !important
+        }
+        .bdr-l-s-inherit {
+            border-left-style: inherit !important
+        }
+        .bdr-l-s-ins {
+            border-left-style: inset !important
+        }
+        .bdr-l-s-out {
+            border-left-style: outset !important
+        }
+        .bdr-l-s-rdg {
+            border-left-style: ridge !important
+        }
+        .bdr-l-s-sld {
+            border-left-style: solid !important
+        }
+        /* Border Left Width Preset */
+        .bdr-l-w-inherit {
+            border-left-width: inherit !important
+        }
+        .bdr-l-w-m {
+            border-left-width: medium !important
+        }
+        .bdr-l-w-tk {
+            border-left-width: thin !important
+        }
+        .bdr-l-w-tn {
+            border-left-width: thin !important
+        }
+    /* Border Inline Preset */
+    .bdr-i-inherit {
+        border-inline: inherit !important
+    }
+        /* Border Inline End Preset */
+            .bdr-i-s-inherit {
+                border-inline-start: inherit !important
+            }
+                /* Border Inline End Width */
+                .bdr-i-s-w-inherit {
+                    border-inline-start-width: inherit !important
+                }
+        /* Border Inline Start Preset */
+        .bdr-i-s-inherit {
+            border-inline-start: inherit !important
+        }
+            /* Border Inline Start Width */
+            .bdr-i-s-w-inherit {
+                border-inline-start-width: inherit !important
+            }
+    /* Border Right Preset */
+    .bdr-r {
+        border-right-width: 1px;
+        border-right-style: solid
+    }
+    .bdr-r-inherit {
+        border-right-color: inherit !important;
+        border-right-style: inherit !important;
+        border-right-width: inherit !important
+    }
+        /* Border Right Style Preset */
+        .bdr-r-s-dsh {
+            border-right-style: dashed !important
+        }
+        .bdr-r-s-dot {
+            border-right-style: dotted !important
+        }
+        .bdr-r-s-dbl {
+            border-right-style: double !important
+        }
+        .bdr-r-s-grv {
+            border-right-style: groove !important
+        }
+        .bdr-r-s-hid {
+            border-right-style: hidden !important
+        }
+        .bdr-r-s-inherit {
+            border-right-style: inherit !important
+        }
+        .bdr-r-s-ins {
+            border-right-style: inset !important
+        }
+        .bdr-r-s-out {
+            border-right-style: outset !important
+        }
+        .bdr-r-s-rdg {
+            border-right-style: ridge !important
+        }
+        .bdr-r-s-sld {
+            border-right-style: solid !important
+        }
+        /* Border Right Width Preset */
+        .bdr-r-w-inherit {
+            border-right-width: inherit !important
+        }
+        .bdr-r-w-m {
+            border-right-width: medium !important
+        }
+        .bdr-r-w-tk {
+            border-right-width: thin !important
+        }
+        .bdr-r-w-tn {
+            border-right-width: thin !important
+        }
+    /* Border Radius Preset */
+    .bdr-rd,
+    .bdr-rd-50 {
+        border-radius: 50% !important
+    }
+    .bdr-rd-inherit {
+        border-radius: inherit !important
+    }
+    .bdr-rd-l {
+        border-radius: 6px !important
+    }
+    .bdr-rd-m {
+        border-radius: 4px !important
+    }
+    .bdr-rd-s {
+        border-radius: 2px !important
+    }
+    .bdr-rd-0 {
+        border-radius: 0 !important
+    }
+    /* Border Style Preset */
+    .bdr-s-dsh {
+        border-style: dashed !important
+    }
+    .bdr-s-dot {
+        border-style: dotted !important
+    }
+    .bdr-s-dbl {
+        border-style: double !important
+    }
+    .bdr-s-grv {
+        border-style: groove !important
+    }
+    .bdr-s-hid {
+        border-style: hidden !important
+    }
+    .bdr-s-inherit {
+        border-style: inherit !important
+    }
+    .bdr-s-ins {
+        border-style: inset !important
+    }
+    .bdr-s-out {
+        border-style: outset !important
+    }
+    .bdr-s-rdg {
+        border-style: ridge !important
+    }
+    .bdr-s-sld {
+        border-style: solid !important
+    }
+    /* Border Top */
+    .bdr-t {
+        border-top-width: 1px;
+        border-top-style: solid
+    }
+    .bdr-t-inherit {
+        border-top-color: inherit !important;
+        border-top-style: inherit !important;
+        border-top-width: inherit !important
+    }
+        /* Border Top Radius Preset */
+            /* Border Top-Left Radius Preset */
+            .bdr-tl-rd,
+            .bdr-tl-rd-50 {
+                border-top-left-radius: 50% !important
+            }
+            .bdr-tl-rd-inherit {
+                border-top-left-radius: inherit !important
+            }
+            .bdr-tl-rd-0 {
+                border-top-left-radius: 0 !important
+            }
+            /* Border Top-Right Radius Preset */
+            .bdr-tr-rd,
+            .bdr-tr-rd-50 {
+                border-top-right-radius: 50% !important
+            }
+            .bdr-tr-rd-inherit {
+                border-top-right-radius: inherit !important
+            }
+            .bdr-tr-rd-0 {
+                border-top-right-radius: 0 !important
+            }
+        /* Border Top Style Preset */
+        .bdr-t-s-dsh {
+            border-top-style: dashed !important
+        }
+        .bdr-t-s-dot {
+            border-top-style: dotted !important
+        }
+        .bdr-t-s-dbl {
+            border-top-style: double !important
+        }
+        .bdr-t-s-grv {
+            border-top-style: groove !important
+        }
+        .bdr-t-s-hid {
+            border-top-style: hidden !important
+        }
+        .bdr-t-s-inherit {
+            border-top-style: inherit !important
+        }
+        .bdr-t-s-ins {
+            border-top-style: inset !important
+        }
+        .bdr-t-s-out {
+            border-top-style: outset !important
+        }
+        .bdr-t-s-rdg {
+            border-top-style: ridge !important
+        }
+        .bdr-t-s-sld {
+            border-top-style: solid !important
+        }
+        /* Border Top Width Preset */
+        .bdr-t-w-inherit {
+            border-top: inherit !important
+        }
+        .bdr-t-w-m {
+            border-top-width: medium !important
+        }
+        .bdr-t-w-tk {
+            border-top-width: thick !important
+        }
+        .bdr-t-w-tn {
+            border-top-width: thin !important
+        }
+    /* Border Width Preset */
+    .bdr-w-inherit {
+        border-width: inherit !important
+    }
+    .bdr-w-m {
+        border-width: medium !important
+    }
+    .bdr-w-tk {
+        border-width: thin !important
+    }
+    .bdr-w-tn {
+        border-width: thin !important
+    }
+/* Background Preset */
+.bg {
+    background: transparent none no-repeat scroll center / cover padding-box border-box;
+    /* --- CONSIDER ---
+            background-blend-mode: soft-light;
+    */
+    box-sizing: border-box;
+    object-fit: contain;
+    object-position: center
+}
+    /* Background Attachment Preset */
+    .bg-a-f {
+        background-attachment: fixed !important
+    }
+    .bg-a-inherit {
+        background-attachment: inherit !important
+    }
+    .bg-a-l {
+        background-attachment: local !important
+    }
+    .bg-a-s {
+        background-attachment: scroll !important
+    }
+    /* Background Blend-Mode Preset */
+    .bg-b-c {
+        background-blend-mode: color !important
+    }
+    .bg-b-cb {
+        background-blend-mode: color-burn !important
+    }
+    .bg-b-cd {
+        background-blend-mode: color-dodge !important
+    }
+    .bg-b-dif {
+        background-blend-mode: difference !important
+    }
+    .bg-b-drk {
+        background-blend-mode: darken !important
+    }
+    .bg-b-e {
+        background-blend-mode: exclusion !important
+    }
+    .bg-b-hl {
+        background-blend-mode: hard-light !important
+    }
+    .bg-b-h {
+        background-blend-mode: hue !important
+    }
+    .bg-b-inherit {
+        background-blend-mode: inherit !important
+    }
+    .bg-b-lig {
+        background-blend-mode: lighten !important
+    }
+    .bg-b-lum {
+        background-blend-mode: luminosity !important
+    }
+    .bg-b-m {
+        background-blend-mode: multiply !important
+    }
+    .bg-b-n {
+        background-blend-mode: normal !important
+    }
+    .bg-b-o {
+        background-blend-mode: overlay !important
+    }
+    .bg-b-sat {
+        background-blend-mode: saturation !important
+    }
+    .bg-b-scr {
+        background-blend-mode: screen !important
+    }
+    .bg-b-sl {
+        background-blend-mode: soft-light !important
+    }
+    /* Background Color Preset
+            --- NOTE ---
+                The classes here also have a
+                "color" property set to balance the
+                visual effects it gives.
+    */
+        /* Aqua */
+        .bg-c-aq,
+        .bg-c-aqua {
+            background-color: #0078FF !important;
+            color: #FFF
+        }
+        /* Beige */
+        .bg-c-bge,
+        .bg-c-beige {
+            background-color: #F9ECC4 !important;
+            color: #000
+        }
+        /* Black */
+        .bg-c-black,
+        .bg-c-k {
+            background-color: #000000 !important;
+            color: #FFF
+        }
+        /* Blood Red */
+        .bg-c-bld,
+        .bg-c-blood,
+        .bg-c-blud {
+            background-color: #CC0000 !important;
+            color: #FFF
+        }
+        /* Blue */
+        .bg-c-b,
+        .bg-c-blue {
+            background-color: #0000FF !important;
+            color: #FFF
+        }
+        /* Light Blue */
+        .bg-c-bg,
+        .bg-c-gb,
+        .bg-c-lgtb,
+        .bg-c-skyb,
+        .bg-c-skyblue {
+            background-color: #00FFFF !important;
+            color: #000
+        }
+        /* White */
+        .bg-c-bgr,
+        .bg-c-brg,
+        .bg-c-ckmy,
+        .bg-c-ckym,
+        .bg-c-cmky,
+        .bg-c-cmyk,
+        .bg-c-cymk,
+        .bg-c-cykm,
+        .bg-c-gbr,
+        .bg-c-grb,
+        .bg-c-kcmy,
+        .bg-c-kcym,
+        .bg-c-kmcy,
+        .bg-c-kmyc,
+        .bg-c-kycm,
+        .bg-c-kymc,
+        .bg-c-mcyk,
+        .bg-c-mcky,
+        .bg-c-mkcy,
+        .bg-c-mkyc,
+        .bg-c-myck,
+        .bg-c-mykc,
+        .bg-c-rbg,
+        .bg-c-rgb,
+        .bg-c-w,
+        .bg-c-white,
+        .bg-c-ycmk,
+        .bg-c-yck,
+        .bg-c-ykcm,
+        .bg-c-ykmc,
+        .bg-c-ymck,
+        .bg-c-ymkc {
+            background-color: #FFFFFF !important;
+            color: #000
+        }
+        /* Light Red */
+        .bg-c-br,
+        .bg-c-lgtr,
+        .bg-c-m,
+        .bg-c-pink,
+        .bg-c-rb {
+            background-color: #FF00FF !important;
+            color: #FFF
+        }
+        /* Brown */
+        .bg-c-brwn,
+        .bg-c-brown {
+            background-color: #996633 !important;
+            color: #FFF
+        }
+        /* Cyan */
+        .bg-c-c,
+        .bg-c-cyan {
+            background-color: #00FFCC !important;
+            color: #000
+        }
+        /* Dark Blue */
+        .bg-c-darkblue,
+        .bg-c-dkb {
+            background-color: #000078 !important;
+            color: #000
+        }
+        /* Dark Grey */
+        .bg-c-darkgray,
+        .bg-c-darkgrey,
+        .bg-c-dkgry {
+            background-color: #555555 !important;
+            color: #000
+        }
+        /* Dark Green */
+        .bg-c-darkgreen,
+        .bg-c-dkg,
+        .bg-c-dkgrn,
+        .bg-c-marsh {
+            background-color: #336600 !important;
+            color: #FFF
+        }
+        /* Dark Red */
+        .bg-c-darkred,
+        .bg-c-dkr,
+        .bg-c-wine {
+            background-color: #780000 !important;
+            color: #FFF
+        }
+        /* Whitish-Gray */
+        .bg-c-egg,
+        .bg-c-whtesmk,
+        .bg-c-whitesmoke {
+            background-color: #EEEEEE !important;
+            color: #000
+        }
+        /* Forest Green */
+        .bg-c-forest {
+            background-color: #007800 !important;
+            color: #FFF
+        }
+        /* Gold */
+        .bg-c-gld,
+        .bg-c-gold {
+           background-color: #EEEE00 !important;
+           color: #000
+        }
+        /* Granite Gray */
+        .bg-c-grnte,
+        .bg-c-granite {
+            background-color: #E5E4E2 !important;
+            color: #000
+        }
+        /* Green */
+        .bg-c-g,
+        .bg-c-green {
+            background-color: #00FF00 !important;
+            color: #000
+        }
+        /* Yellow */
+        .bg-c-gr,
+        .bg-c-rg,
+        .bg-c-simpson,
+        .bg-c-y,
+        .bg-c-yellow {
+            background-color: #FFFF00 !important;
+            color: #000
+        }
+        /* Gray */
+        .bg-c-gray,
+        .bg-c-grey,
+        .bg-c-gry {
+            background-color: #787878 !important;
+            /* --- NOTE ---
+                    The "color" property could either
+                    be "#FFF" or "#000".
+            */
+        }
+        /* Hot Pink */
+        .bg-c-htpnk,
+        .bg-c-hotpink {
+            background-color: #FF34FF !important;
+            color: #FFF
+        }
+        /* --- NOTE ---
+            Inherited value.
+        */
+        .bg-c-inherit {
+            background-color: inherit !important;
+            /* --- NOTE ---
+                    No "color" property needed here.
+            */
+        }
+        /* Indigo */
+        .bg-c-indg,
+        .bg-c-indigo {
+            background-color: #3F48CC !important;
+            color: #FFF
+        }
+        /* Lapis Lazuli Blue */
+        .bg-c-l,
+        .bg-c-lapis {
+            background-color: #0023FF !important;
+            color: #FFF
+        }
+        /* Light Green */
+        .bg-c-lgtg {
+            background-color: #A6FFA6 !important;
+            color: #000
+        }
+        /* Lime */
+        .bg-c-lime {
+            background-color: #B5E61D !important;
+            color: #000   
+        }
+        /* Light Gray */
+        .bg-c-lightgray,
+        .bg-c-lightgrey,
+        .bg-c-lgtgry {
+            background-color: #AAAAAA !important;
+            color: #000
+        }
+        /* Magenta */
+        .bg-c-mgnt,
+        .bg-c-magenta {
+            background-color: #CC00CC !important;
+            color: #FFF
+        }
+        /* Navy Blue */
+        .bg-c-nvy,
+        .bg-c-navy {
+            background-color: #342D7E !important;
+            color: #FFF
+        }
+        /* Olive Green */
+        .bg-c-olv,
+        .bg-c-olive {
+            background-color: #787800 !important;
+            color: #FFF
+        }
+        /* Orange */
+        .bg-c-orng,
+        .bg-c-orange {
+            background-color: #FF7800 !important;
+            color: #000
+        }
+        /* Platinum Gray */
+        .bg-c-pltn,
+        .bg-c-platinum {
+            background-color: #BCC6CC !important;
+            color: #000
+        }
+        /* Purple */
+        .bg-c-purple,
+        .bg-c-vlt,
+        .bg-c-violet {
+            background-color: #7800FF !important;
+            color: #FFF
+        }
+        /* Red */
+        .bg-c-r,
+        .bg-c-red {
+            background-color: #FF0000 !important;
+            color: #FFF
+        }
+        /* Rose Pink */
+        .bg-c-rose {
+            background-color: #FFAEC9 !important;
+            color: #FFF
+        }
+        /* Slate Gray*/
+        .bg-c-slate {
+            background-color: #646D7E !important;
+            color: #FFF
+        }
+        /* Teal */
+        .bg-c-tl,
+        .bg-c-teal {
+            background-color: #00AAAA !important;
+            color: #FFF
+        }
+        /* Transparent */
+        .bg-c-trns {
+            background-color: transparent !important;
+            /* --- NOTE ---
+                    No "color" property needed here.
+            */
+        }
+        /* Turquoise */
+        .bg-c-trquois,
+        .bg-c-turquoise {
+            background-color: #00A2E8 !important;
+            color: #FFF
+        }
+        /*  "Violent" */
+        .bg-c-vlnt,
+        .bg-c-violent {
+            background-color: #CC0078 !important;
+            color: #FFF
+        }
+    /* Background Clip Preset */
+    .bg-cl-bb {
+        background-clip: border-box !important
+    }
+    .bg-cl-cb {
+        background-clip: content-box !important
+    }
+    .bg-cl-inherit {
+        background-clip: inherit !important
+    }
+    .bg-cl-pb {
+        background-clip: padding-box !important
+    }
+    /* Background Origin Preset */
+    .bg-o-bb {
+        background-origin: border-box !important
+    }
+    .bg-o-cb {
+        background-origin: content-box !important
+    }
+    .bg-o-inherit {
+        background-origin: inherit !important
+    }
+    .bg-o-pb {
+        background-origin: padding-box !important
+    }
+    /* Background Position Preset */
+    .bg-p-b {
+        background-position: bottom !important
+    }
+    .bg-p-bl {
+        background-position: bottom left !important
+    }
+    .bg-p-br {
+        background-position: bottom right !important
+    }
+    .bg-p-c {
+        background-position: center !important
+    }
+    .bg-p-l {
+        background-position: left !important
+    }
+    .bg-p-r {
+        background-position: right !important
+    }
+    .bg-p-t {
+        background-position: top !important
+    }
+    .bg-p-tl {
+        background-position: top left !important
+    }
+    .bg-p-tr {
+        background-position: top right !important
+    }
+    /* Background Repeat Preset */
+    .bg-r-nor {
+        background-repeat: no-repeat !important
+    }
+    .bg-r-rx {
+        background-repeat: repeat-x !important
+    }
+    .bg-r-ry {
+        background-repeat: repeat-y !important
+    }
+    .bg-r-r {
+        background-repeat: repeat !important
+    }
+    /* Background Size Preset */
+    .bg-s-cntn {
+        background-size: contain !important
+    }
+    .bg-s-cvr {
+        background-size: cover !important
+    }
+    .bg-s-inherit {
+        background-size: inherit !important
+    }
+/* Box Preset */
+    /* Box Shadow Preset
+        --- NOTE ---
+            This Class Set is based on material depth
+                (shadow on the X-Y axis from the Z-axis).
+    */
+    .btnC,
+    .bx-s-0,
+    .crd {
+        box-shadow: 0 0 2.5px 0 #000 !important
+    }
+    .bx-s-1,
+    .frm {
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .75) !important
+    }
+    .bx-s-2 {
+        box-shadow: 0 0 7.5px 0 rgba(0, 0, 0, .6) !important
+    }
+    .bx-s-3 {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .45) !important
+    }
+    .bx-s-4 {
+        box-shadow: 0 0 12.5px 0 rgba(0, 0, 0, .3) !important
+    }
+    .bx-s-5 {
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, .15) !important
+    }
+/* Caret Color Preset
+    --- NOTE ---
+        New technology, validity is still not certain.
+*/
+    /* Aqua */
+    .crt-c-aq,
+    .crt-c-aqua {
+        caret-color: #0078FF !important
+    }
+    /* Beige */
+    .crt-c-bge,
+    .crt-c-beige {
+        caret-color: #F9ECC4 !important
+    }
+    /* Black */
+    .crt-c-black,
+    .crt-c-k {
+        caret-color: #000000 !important
+    }
+    /* Blood Red */
+    .crt-c-bld,
+    .crt-c-blood,
+    .crt-c-blud {
+        caret-color: #CC0000 !important
+    }
+    /* Blue */
+    .crt-c-b,
+    .crt-c-blue {
+        caret-color: #0000FF !important
+    }
+    /* Light Blue */
+    .crt-c-bg,
+    .crt-c-gb,
+    .crt-c-lgtb,
+    .crt-c-skyb,
+    .crt-c-skyblue {
+        caret-color: #00FFFF !important
+    }
+    /* White */
+    .crt-c-bgr,
+    .crt-c-brg,
+    .crt-c-ckmy,
+    .crt-c-ckym,
+    .crt-c-cmky,
+    .crt-c-cmyk,
+    .crt-c-cymk,
+    .crt-c-cykm,
+    .crt-c-gbr,
+    .crt-c-grb,
+    .crt-c-kcmy,
+    .crt-c-kcym,
+    .crt-c-kmcy,
+    .crt-c-kmyc,
+    .crt-c-kycm,
+    .crt-c-kymc,
+    .crt-c-mcyk,
+    .crt-c-mcky,
+    .crt-c-mkcy,
+    .crt-c-mkyc,
+    .crt-c-myck,
+    .crt-c-mykc,
+    .crt-c-rbg,
+    .crt-c-rgb,
+    .crt-c-w,
+    .crt-c-white,
+    .crt-c-ycmk,
+    .crt-c-yck,
+    .crt-c-ykcm,
+    .crt-c-ykmc,
+    .crt-c-ymck,
+    .crt-c-ymkc {
+        caret-color: #FFFFFF !important
+    }
+    /* Light Red */
+    .crt-c-br,
+    .crt-c-lgtr,
+    .crt-c-m,
+    .crt-c-pink,
+    .crt-c-rb {
+        caret-color: #FF00FF !important
+    }
+    /* Brown */
+    .crt-c-brwn,
+    .crt-c-brown {
+        caret-color: #996633 !important
+    }
+    /* Cyan */
+    .crt-c-c,
+    .crt-c-cyan {
+        caret-color: #00FFCC !important
+    }
+    /* Dark Blue */
+    .crt-c-darkblue,
+    .crt-c-dkb {
+        caret-color: #000078 !important
+    }
+    /* Dark Grey */
+    .crt-c-darkgray,
+    .crt-c-darkgrey,
+    .crt-c-dkgry {
+        caret-color: #555555 !important
+    }
+    /* Dark Green */
+    .crt-c-darkgreen,
+    .crt-c-dkg,
+    .crt-c-dkgrn,
+    .crt-c-marsh {
+        caret-color: #336600 !important
+    }
+    /* Dark Red */
+    .crt-c-darkred,
+    .crt-c-dkr,
+    .crt-c-wine {
+        caret-color: #780000 !important
+    }
+    /* Whitish-Gray */
+    .crt-c-egg,
+    .crt-c-whtesmk,
+    .crt-c-whitesmoke {
+        caret-color: #EEEEEE !important
+    }
+    /* Forest Green */
+    .crt-c-forest {
+        caret-color: #007800 !important
+    }
+    /* Gold */
+    .crt-c-gld,
+    .crt-c-gold {
+       caret-color: #EEEE00 !important
+    }
+    /* Granite Gray */
+    .crt-c-grnte,
+    .crt-c-granite {
+        caret-color: #E5E4E2 !important
+    }
+    /* Green */
+    .crt-c-g,
+    .crt-c-green {
+        caret-color: #00FF00 !important
+    }
+    /* Yellow */
+    .crt-c-gr,
+    .crt-c-rg,
+    .crt-c-simpson,
+    .crt-c-y,
+    .crt-c-yellow {
+        caret-color: #FFFF00 !important
+    }
+    /* Gray */
+    .crt-c-gray,
+    .crt-c-grey,
+    .crt-c-gry {
+        caret-color: #787878 !important
+    }
+    /* Hot Pink */
+    .crt-c-htpnk,
+    .crt-c-hotpink {
+        caret-color: #FF34FF !important
+    }
+    /* --- NOTE ---
+        Inherited value.
+    */
+    .crt-c-inherit {
+        caret-color: inherit !important
+    }
+    /* Indigo */
+    .crt-c-indg,
+    .crt-c-indigo {
+        caret-color: #3F48CC !important
+    }
+    /* Lapis Lazuli Blue */
+    .crt-c-l,
+    .crt-c-lapis {
+        caret-color: #0023FF !important
+    }
+    /* Light Green */
+    .crt-c-lgtg {
+        caret-color: #A6FFA6 !important
+    }
+    /* Lime */
+    .crt-c-lime {
+        caret-color: #B5E61D !important
+    }
+    /* Light Gray */
+    .crt-c-lightgray,
+    .crt-c-lightgrey,
+    .crt-c-lgtgry {
+        caret-color: #AAAAAA !important
+    }
+    /* Magenta */
+    .crt-c-mgnt,
+    .crt-c-magenta {
+        caret-color: #CC00CC !important
+    }
+    /* Navy Blue */
+    .crt-c-nvy,
+    .crt-c-navy {
+        caret-color: #342D7E !important
+    }
+    /* Olive Green */
+    .crt-c-olv,
+    .crt-c-olive {
+        caret-color: #787800 !important
+    }
+    /* Orange */
+    .crt-c-orng,
+    .crt-c-orange {
+        caret-color: #FF7800 !important
+    }
+    /* Platinum Gray */
+    .crt-c-pltn,
+    .crt-c-platinum {
+        caret-color: #BCC6CC !important
+    }
+    /* Purple */
+    .crt-c-purple,
+    .crt-c-vlt,
+    .crt-c-violet {
+        caret-color: #7800FF !important
+    }
+    /* Red */
+    .crt-c-r,
+    .crt-c-red {
+        caret-color: #FF0000 !important
+    }
+    /* Rose Red */
+    .crt-c-rose {
+        caret-color: #FFAEC9 !important
+    }
+    /* Slate Gray*/
+    .crt-c-slate {
+        caret-color: #646D7E !important
+    }
+    /* Teal */
+    .crt-c-tl,
+    .crt-c-teal {
+        caret-color: #00AAAA !important
+    }
+    /* Transparent */
+    .crt-c-trns {
+        caret-color: transparent !important
+    }
+    /* Turquoise */
+    .crt-c-trquois,
+    .crt-c-turquoise {
+        caret-color: #00A2E8 !important
+    }
+    /*  "Violent" */
+    .crt-c-vlnt,
+    .crt-c-violent {
+        caret-color: #FF7800 !important
+    }
+
+/* Clear Preset */
+.clr-b {
+    clear: both !important
+}
+.clr-l {
+    clear: left !important
+}
+.clr-inherit {
+    clear: inherit !important
+}
+.clr-none {
+    clear: none !important
+}
+.clr-r {
+    clear: right !important
+}
+/* Color Preset */
+    /* Aqua */
+    .c-aq,
+    .c-aqua {
+        color: #0078FF !important
+    }
+    /* Beige */
+    .c-bge,
+    .c-beige {
+        color: #F9ECC4 !important
+    }
+    /* Black */
+    .c-black,
+    .c-k {
+        color: #000000 !important
+    }
+    /* Blood Red */
+    .c-bld,
+    .c-blood,
+    .c-blud {
+        color: #CC0000 !important
+    }
+    /* Blue */
+    .c-b,
+    .c-blue {
+        color: #0000FF !important
+    }
+    /* Light Blue */
+    .c-bg,
+    .c-gb,
+    .c-lgtb,
+    .c-skyb,
+    .c-skyblue {
+        color: #00FFFF !important
+    }
+    /* White */
+    .c-bgr,
+    .c-brg,
+    .c-ckmy,
+    .c-ckym,
+    .c-cmky,
+    .c-cmyk,
+    .c-cymk,
+    .c-cykm,
+    .c-gbr,
+    .c-grb,
+    .c-kcmy,
+    .c-kcym,
+    .c-kmcy,
+    .c-kmyc,
+    .c-kycm,
+    .c-kymc,
+    .c-mcyk,
+    .c-mcky,
+    .c-mkcy,
+    .c-mkyc,
+    .c-myck,
+    .c-mykc,
+    .c-rbg,
+    .c-rgb,
+    .c-w,
+    .c-white,
+    .c-ycmk,
+    .c-yck,
+    .c-ykcm,
+    .c-ykmc,
+    .c-ymck,
+    .c-ymkc {
+        color: #FFFFFF !important
+    }
+    /* Light Red */
+    .c-br,
+    .c-lgtr,
+    .c-m,
+    .c-pink,
+    .c-rb {
+        color: #FF00FF !important
+    }
+    /* Brown */
+    .c-brwn,
+    .c-brown {
+        color: #996633 !important
+    }
+    /* Cyan */
+    .c-c,
+    .c-cyan {
+        color: #00FFCC !important
+    }
+    /* Dark Blue */
+    .c-darkblue,
+    .c-dkb {
+        color: #000078 !important
+    }
+    /* Dark Grey */
+    .c-darkgray,
+    .c-darkgrey,
+    .c-dkgry {
+        color: #555555 !important
+    }
+    /* Dark Green */
+    .c-darkgreen,
+    .c-dkg,
+    .c-dkgrn,
+    .c-marsh {
+        color: #336600 !important
+    }
+    /* Dark Red */
+    .c-darkred,
+    .c-dkr,
+    .c-wine {
+        color: #780000 !important
+    }
+    /* Whitish-Gray */
+    .c-egg,
+    .c-whtesmk,
+    .c-whitesmoke {
+        color: #EEEEEE !important
+    }
+    /* Forest Green */
+    .c-forest {
+        color: #007800 !important
+    }
+    /* Gold */
+    .c-gld,
+    .c-gold {
+       color: #EEEE00 !important
+    }
+    /* Granite Gray */
+    .c-grnte,
+    .c-granite {
+        color: #E5E4E2 !important
+    }
+    /* Green */
+    .c-g,
+    .c-green {
+        color: #00FF00 !important
+    }
+    /* Yellow */
+    .c-gr,
+    .c-rg,
+    .c-simpson,
+    .c-y,
+    .c-yellow {
+        color: #FFFF00 !important
+    }
+    /* Gray */
+    .c-gray,
+    .c-grey,
+    .c-gry {
+        color: #787878 !important
+    }
+    /* Hot Pink */
+    .c-htpnk,
+    .c-hotpink {
+        color: #FF34FF !important
+    }
+    /* --- NOTE ---
+        Inherited value.
+    */
+    .c-inherit {
+        color: inherit !important
+    }
+    /* Indigo */
+    .c-indg,
+    .c-indigo {
+        color: #3F48CC !important
+    }
+    /* Lapis Lazuli Blue */
+    .c-l,
+    .c-lapis {
+        color: #0023FF !important
+    }
+    /* Light Green */
+    .c-lgtg {
+        color: #A6FFA6 !important
+    }
+    /* Lime */
+    .c-lime {
+        color: #B5E61D !important
+    }
+    /* Light Gray */
+    .c-lightgray,
+    .c-lightgrey,
+    .c-lgtgry {
+        color: #AAAAAA !important
+    }
+    /* Magenta */
+    .c-mgnt,
+    .c-magenta {
+        color: #CC00CC !important
+    }
+    /* Navy Blue */
+    .c-nvy,
+    .c-navy {
+        color: #342D7E !important
+    }
+    /* Olive Green */
+    .c-olv,
+    .c-olive {
+        color: #787800 !important
+    }
+    /* Orange */
+    .c-orng,
+    .c-orange {
+        color: #FF7800 !important
+    }
+    /* Platinum Gray */
+    .c-pltn,
+    .c-platinum {
+        color: #BCC6CC !important
+    }
+    /* Purple */
+    .c-purple,
+    .c-vlt,
+    .c-violet {
+        color: #7800FF !important
+    }
+    /* Red */
+    .c-r,
+    .c-red {
+        color: #FF0000 !important
+    }
+    /* Rose Red */
+    .c-rose {
+        color: #FFAEC9 !important
+    }
+    /* Slate Gray*/
+    .c-slate {
+        color: #646D7E !important
+    }
+    /* Teal */
+    .c-tl,
+    .c-teal {
+        color: #00AAAA !important
+    }
+    /* Transparent */
+    .c-trns {
+        color: transparent !important
+    }
+    /* Turquoise */
+    .c-trquois,
+    .c-turquoise {
+        color: #00A2E8 !important
+    }
+    /*  "Violent" */
+    .c-vlnt,
+    .c-violent {
+        color: #FF7800 !important
+    }
+/* Direction Preset */
+.dir-inherit {
+    direction: inherit !important
+}
+.dir-l {
+    direction: ltr !important
+}
+.dir-r {
+    direction: rtl !important
+}
+/* Display Preset */
+.d-b {
+    display: block !important
+}
+.d-f {
+    display: flex !important
+}
+.d-g {
+    display: grid !important
+}
+.d-i {
+    display: inline !important
+}
+.d-ib {
+    display: inline-block !important
+}
+.d-if {
+    display: inline-flex !important
+}
+.d-ig {
+    display: inline-grid !important
+}
+.d-inherit {
+    display: inherit !important
+}
+.d-it {
+    display: inline-table !important
+}
+.d-li {
+    display: list-item !important
+}
+.d-none {
+    display: none !important
+}
+.d-r {
+    display: ruby !important
+}
+.d-rb {
+    display: ruby-base !important
+}
+.d-rbc {
+    display: ruby-base-container !important
+}
+.d-rt {
+    display: ruby-text !important
+}
+.d-rtc {
+    display: ruby-text-container !important
+}
+.d-t {
+    display: table !important
+}
+.d-tcap,
+.d-th {
+    display: table-caption !important
+}
+.d-tcel {
+    display: table-cell !important
+}
+.d-tcol {
+    display: table-column !important
+}
+.d-tcolg {
+    display: table-column-group !important
+}
+.d-tr {
+    display: table-row !important
+}
+.d-tfg {
+    display: table-footer-group !important
+}
+.d-thg {
+    display: table-header-group !important
+}
+.d-trg {
+    display: table-row-group !important
+}
+/* Float Preset */
+.flt-l {
+    float: left !important
+}
+.flt-inherit {
+    float: inherit !important
+}
+.flt-none {
+    float: none !important
+}
+.flt-r {
+    float: right !important
+}
+/* Flex Direction Preset */
+.flx-dir-c {
+    flex-direction: column !important
+}
+.flx-dir-cr {
+    flex-direction: column-reverse !important
+}
+.flx-dir-inherit {
+    flex-direction: inherit !important
+}
+.flx-dir-r {
+    flex-direction: row !important
+}
+.flx-dir-rr {
+    flex-direction: row-reverse !important
+}
+/* Font Preset */
+    /* Font Family Preset */
+    .fnt-f-c {
+        /* --- NOTE ---
+                Font face is cursive.
+        */
+        font-family: cursive !important
+    }
+    .fnt-f-f {
+        /* --- NOTE ---
+                Font face is fantasy.
+        */
+        font-family: "Comic Sans MS", fantasy !important
+    }
+    .fnt-f-m {
+        /* --- NOTE ---
+                Font face is monospace.
+        */
+        font-family: "Lucida Console", monospace, monospace !important
+    }
+    .fnt-f-s {
+        /* --- NOTE ---
+                Font face is serif.
+        */
+        font-family: "Times New Roman", serif !important
+    }
+    .fnt-f-ss {
+        /* --- NOTE ---
+                Font face is sans-serif.
+        */
+        font-family: Calibri, sans-serif !important
+    }
+    /* Font Size Preset */
+    .fnt-sz-l {
+        font-size: large !important
+    }
+    .fnt-sz-ll {
+        font-size: larger !important
+    }
+    .fnt-sz-inherit {
+        font-size: inherit !important
+    }
+    .fnt-sz-initial {
+        font-size: initial !important
+    }
+    .fnt-sz-m {
+        font-size: medium !important
+    }
+    .fnt-sz-s {
+        font-size: small !important
+    }
+    .fnt-sz-ss {
+        font-size: smaller !important
+    }
+    .fnt-sz-xl {
+        font-size: x-large !important
+    }
+    .fnt-sz-xxl {
+        font-size: xx-large !important
+    }
+    .fnt-sz-xxs {
+        font-size: xx-small !important
+    }
+    /* Font Style Preset */
+    .fnt-styl-inherit {
+        font-style: inherit !important
+    }
+    .fnt-styl-initial {
+        font-style: initial !important
+    }
+    .fnt-styl-i {
+        font-style: italic !important
+    }
+    .fnt-styl-n {
+        font-style: normal !important
+    }
+    .fnt-styl-o {
+        font-style: oblique !important
+    }
+    /* Font Weight Preset */
+    .fnt-w-inherit {
+        font-weight: inherit !important
+    }
+    .fnt-w-initial {
+        font-weight: initial !important
+    }
+    .fnt-w-l,
+    .fnt-w-ll {
+        font-weight: lighter !important
+    }
+    .fnt-w-n {
+        font-weight: normal !important
+    }
+    .fnt-w-b {
+        font-weight: bold !important
+    }
+    .fnt-w-bb {
+        font-weight: bolder !important
+    }
+    .fnt-w-1 {
+        font-weight: 100 !important
+    }
+    .fnt-w-2 {
+        font-weight: 200 !important
+    }
+    .fnt-w-3 {
+        font-weight: 300 !important
+    }
+    .fnt-w-4 {
+        font-weight: 400 !important
+    }
+    .fnt-w-5 {
+        font-weight: 500 !important
+    }
+    .fnt-w-6 {
+        font-weight: 600 !important
+    }
+    .fnt-w-7 {
+        font-weight: 700 !important
+    }
+    .fnt-w-8 {
+        font-weight: 800 !important
+    }
+    .fnt-w-9 {
+        font-weight: 900 !important
+    }
+/* Grid Preset */
+    /* Grid Auto Preset */
+        /* Grid Auto Columns Preset */
+        .g-a-c-inherit {
+            grid-auto-columns: inherit !important
+        }
+        /* Grid Auto Rows Preset */
+        .g-a-r-inherit {
+            grid-auto-rows: inherit !important
+        }
+    /* Grid Column Gap Preset */
+    .g-c-g-inherit {
+        grid-column-gap: inherit !important
+    }
+    /* Grid Row Gap Preset */
+    .g-r-g-inherit {
+        grid-row-gap: inherit !important
+    }
+    /* Grid Template Preset */
+        /* Grid Template Areas Preset */
+        .g-t-a-inherit {
+            grid-template-areas: inherit !important
+        }
+        /* Grid Template Columns Preset */
+        .g-t-c-inherit {
+            grid-template-columns: inherit !important
+        }
+        /* Grid Template Rows Preset */
+        .g-t-r-inherit {
+            grid-template-rows: inherit !important
+        }
+/* Height Preset */
+.h-auto {
+    height: auto !important
+}
+.h-inherit {
+    height: inherit !important
+}
+.h-5 {
+    height: 5% !important
+}
+.h-12 {
+    height: 12.5% !important
+}
+.h-20 {
+    height: 20% !important
+}
+.h-25 {
+    height: 25% !important
+}
+.h-30 {
+    height: 30% !important
+}
+.h-33 {
+    height: 33.3% !important
+}
+.h-40 {
+    height: 40% !important
+}
+.h-50 {
+    height: 50% !important
+}
+.h-60 {
+    height: 60% !important
+}
+.h-66 {
+    height: 66.6% !important
+}
+.h-70 {
+    height: 70% !important
+}
+.h-75 {
+    height: 75% !important
+}
+.h-80 {
+    height: 80% !important
+}
+.h-82 {
+    height: 82.5% !important
+}
+.h-90 {
+    height: 90% !important
+}
+.h-100 {
+    height: 100% !important
+}
+/* Justify Preset */
+    /* Justify Content Preset */
+    .j-c-c {
+        justify-content: center !important
+    }
+    .j-c-inherit {
+        justify-content: inherit !important
+    }
+    /* Justify Items Preset */
+    .j-i-inherit {
+        justify-items: inherit !important
+    }
+    /* Justify Self Preset */
+    .j-s-inherit {
+        justify-self: inherit !important
+    }
+/* Left Preset */
+.l-0 {
+    left: 0 !important
+}
+/* List Style Preset */
+.l-s-inherit {
+    list-style: inherit !important
+}
+.l-s-none {
+    list-style: none !important
+}
+    /* List Style Position Preset */
+    .l-s-p-inherit {
+        list-style-position: inherit !important
+    }
+    .l-s-p-initial {
+        list-style-position: initial !important
+    }
+    .l-s-p-h {
+        list-style-position: hanging !important
+    }
+    .l-s-p-i {
+        list-style-position: inside !important
+    }
+    .l-s-p-o {
+        list-style-position: outside !important
+    }
+    /* List Style Type Preset */
+    .l-s-t-afar {
+        list-style-type: afar !important
+    }
+    .l-s-t-amharic {
+        list-style-type: amharic !important
+    }
+    .l-s-t-amharicabegede {
+        list-style-type: amharic-abegede !important
+    }
+    .l-s-t-armenian {
+        list-style-type: armenian !important
+    }
+    .l-s-t-asterisks {
+        list-style-type: asterisks !important
+    }
+    .l-s-t-arabicindic {
+        list-style-type: arabic-indic !important
+    }
+    .l-s-t-bengali {
+        list-style-type: bengali !important
+    }
+    .l-s-t-binary {
+        list-style-type: binary !important
+    }
+    .l-s-t-cambodian {
+        list-style-type: cambodian !important
+    }
+    .l-s-t-circle {
+        list-style-type: circle !important
+    }
+    .l-s-t-cjkearthlybranch {
+        list-style-type: cjk-earthly-branch !important
+    }
+    .l-s-t-cjkideographic {
+        list-style-type: cjk-ideographic !important
+    }
+    .l-s-t-cjkheavenlystem {
+        list-style-type: cjk-heavenly-stem !important
+    }
+    .l-s-t-decimal {
+        list-style-type: decimal !important
+    }
+    .l-s-t-decimalleadingzero {
+        list-style-type: decimal-leading-zero !important
+    }
+    .l-s-t-devanagari {
+        list-style-type: devanagari !important
+    }
+    .l-s-t-disc {
+        list-style-type: disc !important
+    }
+    .l-s-t-footnotes {
+        list-style-type: footnotes !important
+    }
+    .l-s-t-ethiopic {
+        list-style-type: ethiopic !important
+    }
+    .l-s-t-ethiopicabegede {
+        list-style-type: ethiopic-abegede !important
+    }
+    .l-s-t-ethiopicabegedeamet {
+        list-style-type: ethiopic-abegede-am-et !important
+    }
+    .l-s-t-ethiopicabegedegez {
+        list-style-type: ethiopic-abegede-gez !important
+    }
+    .l-s-t-ethiopicabegedetier {
+        list-style-type: ethiopic-abegede-ti-er !important
+    }
+    .l-s-t-ethiopicabegedetiet {
+        list-style-type: ethiopic-abegede-ti-et !important
+    }
+    .l-s-t-ethiopichalehameaaer {
+        list-style-type: ethiopic-halehame-aa-er !important
+    }
+    .l-s-t-ethiopichalehameaaet {
+        list-style-type: ethiopic-halehame-aa-et !important
+    }
+    .l-s-t-ethiopichalehameamet {
+        list-style-type: ethiopic-halehame-am-et !important
+    }
+    .l-s-t-ethiopichalehamegez {
+        list-style-type: ethiopic-halehame-gez !important
+    }
+    .l-s-t-ethiopichalehameomet {
+        list-style-type: ethiopic-halehame-om-et !important
+    }
+    .l-s-t-ethiopichalehamesidet {
+        list-style-type: ethiopic-halehame-sid-et !important
+    }
+    .l-s-t-ethiopichalehamesoet {
+        list-style-type: ethiopic-halehame-so-et !important
+    }
+    .l-s-t-ethiopichalehametier {
+        list-style-type: ethiopic-halehame-ti-er !important
+    }
+    .l-s-t-ethiopichalehametiet {
+        list-style-type: ethiopic-halehame-ti-et !important
+    }
+    .l-s-t-georgian {
+        list-style-type: georgian !important
+    }
+    .l-s-t-gujarati {
+        list-style-type: gujarati !important
+    }
+    .l-s-t-gurmukhi {
+        list-style-type: hangul !important
+    }
+    .l-s-t-hangulconsonant {
+        list-style-type: hangul-consonant !important
+    }
+    .l-s-t-hebrew {
+        list-style-type: hebrew !important
+    }
+    .l-s-t-hiragana {
+        list-style-type: hiragana !important
+    }
+    .l-s-t-hiraganairoha {
+        list-style-type: hiragana-iroha !important
+    }
+    .l-s-t-inherit {
+        list-style-type: inherit !important
+    }
+    .l-s-t-initial {
+        list-style-type: initial !important
+    }
+    .l-s-t-kannada {
+        list-style-type: kannada !important
+    }
+    .l-s-t-katakana {
+        list-style-type: katakana !important
+    }
+    .l-s-t-katakanairoha {
+        list-style-type: katakana-iroha !important
+    }
+    .l-s-t-khmer {
+        list-style-type: khmer !important
+    }
+    .l-s-t-loweralpha {
+        list-style-type: lower-alpha !important
+    }
+    .l-s-t-lowerarmenian {
+        list-style-type: lower-armenian !important
+    }
+    .l-s-t-lowergreek {
+        list-style-type: lower-greek !important
+    }
+    .l-s-t-lowerhexadecimal {
+        list-style-type: lower-hexadecimal !important
+    }
+    .l-s-t-lowernorwegian {
+        list-style-type: lower-norwegian !important
+    }
+    .l-s-t-lowerroman {
+        list-style-type: lower-roman !important
+    }
+    .l-s-t-malayalam {
+        list-style-type: malayalam !important
+    }
+    .l-s-t-mongolian {
+        list-style-type: mongolian !important
+    }
+    .l-s-t-myanmar {
+        list-style-type: myanmar !important
+    }
+    .l-s-t-octal {
+        list-style-type: octal !important
+    }
+    .l-s-t-oriya {
+        list-style-type: oriya !important
+    }
+    .l-s-t-oromo {
+        list-style-type: oromo !important
+    }
+    .l-s-t-persian {
+        list-style-type: persian !important
+    }
+    .l-s-t-sidama {
+        list-style-type: sidama
+    }
+    .l-s-t-smartpolygon {
+        list-style-type: smart-polygon
+    }
+    .l-s-t-somali {
+        list-style-type: somali !important
+    }
+    .l-s-t-square {
+        list-style-type: square !important
+    }
+    .l-s-t-telugu {
+        list-style-type: telugu !important
+    }
+    .l-s-t-tibetan {
+        list-style-type: tibetan !important
+    }
+    .l-s-t-tigre {
+        list-style-type: tigre !important
+    }
+    .l-s-t-tigrinyaer {
+        list-style-type: tigrinya-er !important
+    }
+    .l-s-t-tigrinyaerabegede {
+        list-style-type: tigrinya-er-abegede !important
+    }
+    .l-s-t-tigrinyaet {
+        list-style-type: tigrinya-et !important
+    }
+    .l-s-t-tigrinyaetabegede {
+        list-style-type: tigrinya-et-abegede !important
+    }
+    .l-s-t-unset {
+        list-style-type: unset !important
+    }
+    .l-s-t-upperalpha {
+        list-style-type: upper-alpha !important
+    }
+    .l-s-t-upperarmenian {
+        list-style-type: upper-armenian !important
+    }
+    .l-s-t-uppergreek {
+        list-style-type: upper-greek !important
+    }
+    .l-s-t-upperhexadecimal {
+        list-style-type: upper-hexadecimal !important
+    }
+    .l-s-t-upperlatin {
+        list-style-type: upper-latin !important
+    }
+    .l-s-t-uppernorwegian {
+        list-style-type: upper-norwegian !important
+    }
+    .l-s-t-upperroman {
+        list-style-type: upper-roman !important
+    }
+    .l-s-t-urdu {
+        list-style-type: urdu !important
+    }
+/* Inline Preset */
+.i-inherit {
+    inline: inherit !important
+}
+    /* Inline Size Preset */
+    .i-s-inherit {
+        inline-size: inherit !important
+    }
+/* Margin Preset */
+.m-auto {
+    margin: auto !important
+}
+.m-inherit {
+    margin: inherit !important
+}
+.m-0 {
+    margin: 0 !important
+}
+    /* Margin Block Preset */
+        /* Margin Block End Preset */
+        .m-b-e-inherit {
+            margin-block-end: inherit !important
+        }
+        /* Margin Block Start Preset */
+        .m-b-s-inherit {
+            margin-block-start: inherit !important
+        }
+    /* Margin Bottom Preset */
+    .m-b-inherit {
+        margin-bottom: inherit !important
+    }
+    .m-b-0 {
+        margin-bottom: 0 !important
+    }
+    /* Margin Inline Preset */
+        /* Margin Inline End Preset */
+        .m-i-e-inherit {
+            margin-inline-end: inherit !important
+        }
+        /* Margin Inline Start Preset */
+        .m-i-s-inherit {
+            margin-inline-start: inherit !important
+        }
+    /* Margin Left Preset */
+    .m-l-inherit {
+        margin-left: inherit !important
+    }
+    .m-l-0 {
+        margin-left: 0 !important
+    }
+    /* Margin Right Preset */
+    .m-r-inherit {
+        margin-right: inherit !important
+    }
+    .m-r-0 {
+        margin-right: 0 !important
+    }
+    /* Margin Top Preset */
+    .m-t-inherit {
+        margin-top: inherit !important
+    }
+    .m-t-0 {
+        margin-top: 0 !important
+    }
+/* Object Preset */
+    /* Object Fit Preset */
+    .obj-f-cntn {
+        object-fit: contain !important
+    }
+    .obj-f-cvr {
+        object-fit: cover !important
+    }
+    .obj-f-f {
+        object-fit: fill !important
+    }
+    .obj-f-inherit {
+        object-fit: inherit !important
+    }
+    .obj-f-initial {
+        object-fit: initial !important
+    }
+    .obj-f-none {
+        object-fit: none !important
+    }
+    .obj-f-sd {
+        object-fit: scale-down !important
+    }
+    /* Object Position Preset */
+    .obj-p-b {
+        object-position: bottom !important
+    }
+    .obj-p-c {
+        object-position: center !important
+    }
+    .obj-p-l {
+        object-position: left !important
+    }
+    .obj-p-r {
+        object-position: right !important
+    }
+    .obj-p-t {
+        object-position: top !important
+    }
+/* Opacity Preset */
+.o-inherit {
+    opacity: inherit !important
+}
+.o-eighth {
+    opacity: .125 !important
+}
+.o-half {
+    opacity: .5 !important
+}
+.o-quart {
+    opacity: .25 !important
+}
+.o-sixteenth {
+    opacity: .0825 !important
+}
+.o-0 {
+    opacity: 0 !important
+}
+.o-1 {
+    opacity: 1 !important
+}
+/* Outline Preset */
+.otln {
+    outline-color: inherit !important;
+    outline-offset: 0 !important;
+    outline-style: solid !important;
+    outline-width: 1px !important
+}
+.otln-inherit {
+    outline-color: inherit !important;
+    outline-offset: inherit !important;
+    outline-style: inherit !important;
+    outline-width: inherit !important
+}
+/* Overflow Preset */
+.ovfw-h {
+    overflow: hidden !important
+}
+.ovfw-inherit {
+    overflow: inherit !important
+}
+.ovfw-s {
+    overflow: scroll !important
+}
+.ovfw-v {
+    overflow: visible !important
+}
+    /* Overflow Clip-Box Preset */
+    .ovfw-clp-bx-inherit {
+        overflow-clip-box: inherit !important
+    }
+    /* Overflow Wrap Preset */
+    .ovfw-wrp-inherit {
+        overflow-wrap: inherit !important
+    }
+    /* Overflow X Preset */
+    .ovfw-x-h {
+        overflow-x: hidden !important
+    }
+    .ovfw-x-inherit {
+        overflow-x: inherit !important
+    }
+    .ovfw-x-s {
+        overflow-x: scroll !important
+    }
+    .ovfw-x-v {
+        overflow-x: visible !important
+    }
+    /* Overflow Y Preset */
+    .ovfw-y-h {
+        overflow-y: hidden !important
+    }
+    .ovfw-y-inherit {
+        overflow-y: inherit !important
+    }
+    .ovfw-y-s {
+        overflow-y: scroll !important
+    }
+    .ovfw-y-v {
+        overflow-y: visible !important
+    }
+/* Padding Preset */
+.p-auto {
+    padding: auto !important
+}
+.p-inherit {
+    padding: inherit !important
+}
+.p-0 {
+    padding: 0 !important
+}
+    /* Padding Bottom Preset */
+    .p-b-inherit {
+        padding-bottom: inherit !important
+    }
+    .p-b-0 {
+        padding-bottom: 0 !important
+    }
+    /* Padding Inline Preset */
+        /* Padding Block Preset */
+            /* Padding Block End */
+            .p-b-e-inherit {
+                padding-block-end: inherit !important
+            }
+            /* Padding Block Start */
+            .p-b-s-inherit {
+                padding-block-start: inherit !important
+            }
+        /* Padding Inline Preset */
+            /* Padding Inline End */
+            .p-i-e-inherit {
+                padding-inline-end: inherit !important
+            }
+            /* Padding Inline Start */
+            .p-i-s-inherit {
+                padding-inline-start: inherit !important
+            }
+    /* Padding Left Preset */
+    .p-l-inherit {
+        padding-left: inherit !important
+    }
+    .p-l-0 {
+        padding-left: 0 !important
+    }
+    /* Padding Right Preset */
+    .p-r-inherit {
+        padding-right: inherit !important
+    }
+    .p-r-0 {
+        padding-right: 0 !important
+    }
+    /* Padding Top Preset */
+    .p-t-inherit {
+        padding-top: inherit !important
+    }
+    .p-t-0 {
+        padding-top: 0 !important
+    }
+}
+/* Pointer Events Preset */
+.p-e-a {
+    pointer-events: all !important
+}
+.p-e-f {
+    pointer-events: fill !important
+}
+.p-e-inherit {
+    pointer-events: inherit !important
+}
+.p-e-n {
+    pointer-events: none !important
+}
+.p-e-p {
+    pointer-events: painted !important
+}
+.p-e-s {
+    pointer-events: stroke !important
+}
+.p-e-vF {
+    pointer-events: visibleFill !important
+}
+.p-e-vP {
+    pointer-events: visiblePainted !important
+}
+.p-e-vS {
+    pointer-events: visibleStroke !important
+}
+/* Position Preset */
+.pos-abs {
+    position: absolute !important
+}
+.pos-fix {
+    position: fixed !important
+}
+.pos-inherit {
+    position: inherit !important
+}
+.pos-rlv {
+    position: relative !important
+}
+.pos-stat {
+    position: static !important
+}
+.pos-stck {
+    position: sticky !important
+}
+/* Resize Preset */
+.rsz-both,
+.rsz-x.rsz-y {
+    resize: both !important
+}
+.rsz-inherit {
+    resize: inherit !important
+}
+.rsz-none {
+    resize: none !important
+}
+.rsz-x {
+    resize: horizontal !important
+}
+.rsz-y {
+    resize: vertical !important
+}
+/* Right Preset */
+.r-0 {
+    right: 0 !important
+}
+/* Text Preset */
+    /* Text Align Preset */
+    .txt-a-c {
+        text-align: center !important
+    }
+    .txt-a-l {
+        text-align: left !important
+    }
+    .txt-a-j {
+        text-align: justify !important
+    }
+    .txt-a-mp {
+        text-align: match-parent !important
+    }
+    .txt-a-r {
+        text-align: right !important
+    }
+    .txt-a-s {
+        text-align: start !important
+    }
+    /* Text Decoration Preset */
+        /* Text Decoration Color Preset */
+            /* Aqua */
+            .txt-d-c-aq,
+            .txt-d-c-aqua {
+                text-decoration-color: #0078FF !important
+            }
+            /* Beige */
+            .txt-d-c-bge,
+            .txt-d-c-beige {
+                text-decoration-color: #F9ECC4 !important
+            }
+            /* Black */
+            .txt-d-c-black,
+            .txt-d-c-k {
+                text-decoration-color: #000000 !important
+            }
+            /* Blood Red */
+            .txt-d-c-bld,
+            .txt-d-c-blood,
+            .txt-d-c-blud {
+                text-decoration-color: #CC0000 !important
+            }
+            /* Blue */
+            .txt-d-c-b,
+            .txt-d-c-blue {
+                text-decoration-color: #0000FF !important
+            }
+            /* Light Blue */
+            .txt-d-c-bg,
+            .txt-d-c-gb,
+            .txt-d-c-lgtb,
+            .txt-d-c-skyb,
+            .txt-d-c-skyblue {
+                text-decoration-color: #00FFFF !important
+            }
+            /* White */
+            .txt-d-c-bgr,
+            .txt-d-c-brg,
+            .txt-d-c-ckmy,
+            .txt-d-c-ckym,
+            .txt-d-c-cmky,
+            .txt-d-c-cmyk,
+            .txt-d-c-cymk,
+            .txt-d-c-cykm,
+            .txt-d-c-gbr,
+            .txt-d-c-grb,
+            .txt-d-c-kcmy,
+            .txt-d-c-kcym,
+            .txt-d-c-kmcy,
+            .txt-d-c-kmyc,
+            .txt-d-c-kycm,
+            .txt-d-c-kymc,
+            .txt-d-c-mcyk,
+            .txt-d-c-mcky,
+            .txt-d-c-mkcy,
+            .txt-d-c-mkyc,
+            .txt-d-c-myck,
+            .txt-d-c-mykc,
+            .txt-d-c-rbg,
+            .txt-d-c-rgb,
+            .txt-d-c-w,
+            .txt-d-c-white,
+            .txt-d-c-ycmk,
+            .txt-d-c-yck,
+            .txt-d-c-ykcm,
+            .txt-d-c-ykmc,
+            .txt-d-c-ymck,
+            .txt-d-c-ymkc {
+                text-decoration-color: #FFFFFF !important
+            }
+            /* Light Red */
+            .txt-d-c-br,
+            .txt-d-c-lgtr,
+            .txt-d-c-m,
+            .txt-d-c-pink,
+            .txt-d-c-rb {
+                text-decoration-color: #FF00FF !important
+            }
+            /* Brown */
+            .txt-d-c-brwn,
+            .txt-d-c-brown {
+                text-decoration-color: #996633 !important
+            }
+            /* Cyan */
+            .txt-d-c-c,
+            .txt-d-c-cyan {
+                text-decoration-color: #00FFCC !important
+            }
+            /* Dark Blue */
+            .txt-d-c-darkblue,
+            .txt-d-c-dkb {
+                text-decoration-color: #000078 !important
+            }
+            /* Dark Grey */
+            .txt-d-c-darkgray,
+            .txt-d-c-darkgrey,
+            .txt-d-c-dkgry {
+                text-decoration-color: #555555 !important
+            
+            }
+            /* Dark Green */
+            .txt-d-c-darkgreen,
+            .txt-d-c-dkg,
+            .txt-d-c-dkgrn,
+            .txt-d-c-marsh {
+                text-decoration-color: #336600 !important
+            }
+            /* Dark Red */
+            .txt-d-c-darkred,
+            .txt-d-c-dkr,
+            .txt-d-c-wine {
+                text-decoration-color: #780000 !important
+            }
+            /* Whitish-Gray */
+            .txt-d-c-egg,
+            .txt-d-c-whtesmk,
+            .txt-d-c-whitesmoke {
+                text-decoration-color: #EEEEEE !important
+            }
+            /* Forest Green */
+            .txt-d-c-forest {
+                text-decoration-color: #007800 !important
+            }
+            /* Gold */
+            .txt-d-c-gld,
+            .txt-d-c-gold {
+               text-decoration-color: #EEEE00 !important
+            }
+            /* Granite Gray */
+            .txt-d-c-grnte,
+            .txt-d-c-granite {
+                text-decoration-color: #E5E4E2 !important
+            }
+            /* Green */
+            .txt-d-c-g,
+            .txt-d-c-green {
+                text-decoration-color: #00FF00 !important
+            }
+            /* Yellow */
+            .txt-d-c-gr,
+            .txt-d-c-rg,
+            .txt-d-c-simpson,
+            .txt-d-c-y,
+            .txt-d-c-yellow {
+                text-decoration-color: #FFFF00 !important
+            }
+            /* Gray */
+            .txt-d-c-gray,
+            .txt-d-c-grey,
+            .txt-d-c-gry {
+                text-decoration-color: #787878 !important
+            }
+            /* Hot Pink */
+            .txt-d-c-htpnk,
+            .txt-d-c-hotpink {
+                text-decoration-color: #FF34FF !important
+            }
+            /* --- NOTE ---
+                Inherited value.
+            */
+            .txt-d-c-inherit {
+                text-decoration-color: inherit !important
+            }
+            /* Indigo */
+            .txt-d-c-indg,
+            .txt-d-c-indigo {
+                text-decoration-color: #3F48CC !important
+            }
+            /* Lapis Lazuli Blue */
+            .txt-d-c-l,
+            .txt-d-c-lapis {
+                text-decoration-color: #0023FF !important
+            }
+            /* Light Green */
+            .txt-d-c-lgtg {
+                text-decoration-color: #A6FFA6 !important
+            }
+            /* Lime */
+            .txt-d-c-lime {
+                text-decoration-color: #B5E61D !important
+            }
+            /* Light Gray */
+            .txt-d-c-lightgray,
+            .txt-d-c-lightgrey,
+            .txt-d-c-lgtgry {
+                text-decoration-color: #AAAAAA !important
+            }
+            /* Magenta */
+            .txt-d-c-mgnt,
+            .txt-d-c-magenta {
+                text-decoration-color: #CC00CC !important
+            }
+            /* Navy Blue */
+            .txt-d-c-nvy,
+            .txt-d-c-navy {
+                text-decoration-color: #342D7E !important
+            }
+            /* Olive Green */
+            .txt-d-c-olv,
+            .txt-d-c-olive {
+                text-decoration-color: #787800 !important
+            }
+            /* Orange */
+            .txt-d-c-orng,
+            .txt-d-c-orange {
+                text-decoration-color: #FF7800 !important
+            }
+            /* Platinum Gray */
+            .txt-d-c-pltn,
+            .txt-d-c-platinum {
+                text-decoration-color: #BCC6CC !important
+            }
+            /* Purple */
+            .txt-d-c-purple,
+            .txt-d-c-vlt,
+            .txt-d-c-violet {
+                text-decoration-color: #7800FF !important
+            }
+            /* Red */
+            .txt-d-c-r,
+            .txt-d-c-red {
+                text-decoration-color: #FF0000 !important
+            }
+            /* Rose Pink */
+            .txt-d-c-rose {
+                text-decoration-color: #FFAEC9 !important
+            }
+            /* Slate Gray*/
+            .txt-d-c-slate {
+                text-decoration-color: #646D7E !important
+            }
+            /* Teal */
+            .txt-d-c-tl,
+            .txt-d-c-teal {
+                text-decoration-color: #00AAAA !important
+            }
+            /* Transparent */
+            .txt-d-c-trns {
+                text-decoration-color: transparent !important
+            }
+            /* Turquoise */
+            .txt-d-c-trquois,
+            .txt-d-c-turquoise {
+                text-decoration-color: #00A2E8 !important
+            }
+            /*  "Violent" */
+            .txt-d-c-vlnt,
+            .txt-d-c-violent {
+                text-decoration-color: #CC0078 !important
+            }
+        .txt-d-none {
+            text-decoration: none !important
+        }
+        /* Text Decoration Line Preset */
+        .txt-d-l-inherit {
+            text-decoration-line: inherit !important
+        }
+        .txt-d-l-l {
+            text-decoration-line: line-through !important
+        }
+        .txt-d-l-o {
+            text-decoration-line: overline !important
+        }
+        .txt-d-l-u {
+            text-decoration-line: underline !important
+        }
+        /* Text Decoration Style Preset */
+        .txt-d-s-dot {
+            text-decoration-style: dotted !important
+        }
+        .txt-d-s-dsh {
+            text-decoration-style: dashed !important
+        }
+        .txt-d-s-inherit {
+            text-decoration-style: inherit !important
+        }
+        .txt-d-s-sld {
+            text-decoration-style: solid !important
+        }
+        .txt-d-u {
+            text-decoration: underline !important
+        }
+    /* Text Overflow Preset */
+    .txt-ovfw-clip {
+        text-overflow: clip !important
+
+    }
+    .txt-ovfw-elps {
+        text-overflow: ellipsis !important
+
+    }
+    .txt-ovfw-inherit {
+        text-overflow: inherit !important
+
+    }
+    /* Text Underline Preset */
+    .txt-u-p-inherit {
+        text-underline-position: inherit !important
+
+    }
+    .txt-u-p-l {
+        text-underline-position: left !important
+
+    }
+    .txt-u-p-r {
+        text-underline-position: right !important
+
+    }
+    .txt-u-p-u {
+        text-underline-position: under !important
+
+    }
+    /* Text Transform Preset */
+    .txt-t-cap {
+        text-transform: capitalize !important
+
+    }
+    .txt-t-inherit {
+        text-transform: inherit !important
+
+    }
+    .txt-t-l {
+        text-transform: lowercase !important
+
+    }
+    .txt-t-none {
+        text-transform: none !important
+
+    }
+    .txt-t-u {
+        text-transform: uppercase !important
+
+    }
+/* Top Preset */
+.t-0 {
+    top: 0 !important
+}
+/* Transition Preset */
+    /* Transition Delay Preset */
+    .trns-d-inherit {
+        transition-delay: inherit !important
+    }
+    .trns-d-0 {
+        transition-delay: 0 !important
+    }
+    .trns-d-1 {
+        transition-delay: .5s !important
+    }
+    .trns-d-2 {
+        transition-delay: 1s !important
+    }
+    .trns-d-3 {
+        transition-delay: 1.5s !important
+    }
+    .trns-d-4 {
+        transition-delay: 2s !important
+    }
+    .trns-d-5 {
+        transition-delay: 2.5s !important
+    }
+    /* Transition Timing Function Preset */
+    .trns-s-e {
+        /* --- NOTE ---
+                Animation style is ease.
+        */
+        transition-timing-function: ease
+    }
+    .trns-s-ei {
+        /* --- NOTE ---
+                Animation style is ease-in.
+        */
+        transition-timing-function: ease-in
+    }
+    .trns-s-eio {
+        /* --- NOTE ---
+                Animation style is ease-in-out.
+        */
+        transition-timing-function: ease-in-out
+    }
+    .trns-s-eo {
+        /* --- NOTE ---
+                Animation style is ease-out.
+        */
+        transition-timing-function: ease-out
+    }
+    .trns-s-foli {
+        /* --- NOTE ---
+                Animation style is fast-out-linear-in.
+        */
+        transition-timing-function: cubic-bezier(.4, 0, 1, 1) !important
+    }
+    .trns-s-fosi {
+        /* --- NOTE ---
+                Animation style is fast-out-slow-in.
+        */
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1) !important
+    }
+    .trns-s-ib {
+        /* --- NOTE ---
+                Animation style is in-back.
+        */
+        transition-timing-function: cubic-bezier(.6, -.28, .74, .05) !important
+    }
+    .trns-s-ic {
+        /* --- NOTE ---
+                Animation style is in-cubic.
+        */
+        transition-timing-function: cubic-bezier(.55, .06, .68, .19) !important
+    }
+    .trns-s-inherit {
+        /* --- NOTE ---
+                Animation style is inherit.
+        */
+        transition-timing-function: inherit !important
+    }
+    .trns-s-iob {
+        /* --- NOTE ---
+                Animation style is in-out-back.
+        */
+        transition-timing-function: cubic-bezier(.68, -.55, .27, 1.55) !important
+    }
+    .trns-s-ioc {
+        /* --- NOTE ---
+                Animation style is in-out-cubic.
+        */
+        transition-timing-function: cubic-bezier(.65, .05, .36, 1) !important
+    }
+    .trns-s-ioq {
+        /* --- NOTE ---
+                Animation style is in-out-quadratic.
+        */
+        transition-timing-function: cubic-bezier(.46, .03, .52, .96) !important
+    }
+    .trns-s-ios {
+        /* --- NOTE ---
+                Animation style is in-out-sine.
+        */
+        transition-timing-function: cubic-bezier(.45, .05, .55, .95) !important
+    }
+    .trns-s-iq {
+        /* --- NOTE ---
+                Animation style is in-quadratic.
+        */
+        transition-timing-function: cubic-bezier(.55, .09, .68, .53) !important
+    }
+    .trns-s-is {
+        /* --- NOTE ---
+                Animation style is in-sine.
+        */
+        transition-timing-function: cubic-bezier(.47, 0, .75, .72) !important
+    }
+    .trns-s-losi {
+        /* --- NOTE ---
+                Animation style is linear-out-slow-in.
+        */
+        transition-timing-function: cubic-bezier(0, 0, .2, 1) !important
+    }
+    .trns-s-ob {
+        /* --- NOTE ---
+                Animation style is out-back.
+        */
+        transition-timing-function: cubic-bezier(.18, .89, .32, 1.28) !important
+    }
+    .trns-s-oc {
+        /* --- NOTE ---
+                Animation style is out-cubic.
+        */
+        transition-timing-function: cubic-bezier(.22, .61, .36, 1) !important
+    }
+    .trns-s-oq {
+        /* --- NOTE ---
+                Animation style is out-quartic.
+        */
+        transition-timing-function: cubic-bezier(.25, .46, .45, .94) !important
+    }
+    .trns-s-os {
+        /* --- NOTE ---
+                Animation style is out-sine.
+        */
+        transition-timing-function: cubic-bezier(.39, .58, .57, 1.0) !important
+    }
+    .trns-s-q {
+        /* --- NOTE ---
+                Animation style is quartic.
+        */
+        transition-timing-function: cubic-bezier(.77, 0, .18, .1) !important
+    }
+    /* Transition Duration Preset */
+    .trns-t-inherit {
+        transition-duration: inherit !important
+    }
+    .trns-t-0 {
+        transition-duration: 0s !important
+    }
+    .trns-t-1 {
+        transition-duration: .5s !important
+    }
+    .trns-t-2 {
+        transition-duration: 1s !important
+    }
+    .trns-t-3 {
+        transition-duration: 1.5s !important
+    }
+    .trns-t-4 {
+        transition-duration: 2s !important
+    }
+    .trns-t-5 {
+        transition-duration: 2.5s !important
+    }
+/* Visibility Preset */
+.v-hidden {
+    visibility: hidden !important
+}
+.v-inherit {
+    visibility: inherit !important
+}
+.v-visible {
+    visibility: visible !important
+}
+/* Width Preset */
+.w-auto {
+    width: auto !important
+}
+.w-inherit {
+    width: inherit !important
+}
+.w-5 {
+    width: 5% !important
+}
+.w-12 {
+    width: 12.5% !important
+}
+.w-20 {
+    width: 20% !important
+}
+.w-25 {
+    width: 25% !important
+}
+.w-30 {
+    width: 30% !important
+}
+.w-33 {
+    width: 33.3% !important
+}
+.w-40 {
+    width: 40% !important
+}
+.w-50 {
+    width: 50% !important
+}
+.w-60 {
+    width: 60% !important
+}
+.w-66 {
+    width: 66.6% !important
+}
+.w-70 {
+    width: 70% !important
+}
+.w-75 {
+    width: 75% !important
+}
+.w-80 {
+    width: 80% !important
+}
+.w-82 {
+    width: 82.5% !important
+}
+.w-90 {
+    width: 90% !important
+}
+.w-100 {
+    width: 100% !important
+}
+/* Whitespace Preset */
+.w-s-inherit {
+    white-space: inherit !important
+}
+.w-s-p {
+    white-space: pre !important
+}
+.w-s-pl {
+    white-space: pre-line !important
+}
+.w-s-pw {
+    white-space: pre-wrap !important
+}
+/* Zoom Preset */
+.zm,
+.zm-1 {
+    zoom: 1 !important
+}
+.zm-eighth {
+    zoom: .125 !important
+}
+.zm-half {
+    zoom: .5 !important
+}
+.zm-quart {
+    zoom: .25 !important
+}
+.zm-sixteenth {
+    zoom: .0825 !important
+}
+.zm-0 {
+    zoom: 0 !important
+}
+.zm-2 {
+    zoom: 2 !important
+}
+.zm-3 {
+    zoom: 3 !important
+}
+.zm-4 {
+    zoom: 4 !important
+}
+.zm-5 {
+    zoom: 5 !important
+}
+
+/* Lapys JS Components */
+/* Badges */
+.bdg {
+    float: none
+}
+/* Button Components (Widgets), Stack Tables */
+.btn.cmpnt:not(tr) {
+    display: inline-block
+}
+table.cmpnt *:not(tr),
+.btn.cmpnt:not(tr) {
+    border: 1px solid #DEDEDE;
+    border-radius: 2.5px;
+    cursor: default;
+    line-height: 40px;
+    margin: 0;
+    outline: 0;
+    min-height: 40px;
+    min-width: 75px;
+    object-fit: contain;
+    overflow: hidden;
+    padding: 5px;
+    transition: .675s;
+    width: auto
+}
+    /* Block Lists */
+    li.btn.cmpnt {
+        display: block;
+        float: none;
+        line-height: initial;
+        list-style: none;
+        min-height: 0;
+        min-width: 75px;
+        padding: 10px 5px;
+        text-align: left
+    }
+    li.btn.cmpnt:empty {
+        min-height: 20px
+    }
+    /* Button Groups */
+    .cmpnt.cmpnt-grp {
+        border-radius: 2.5px;
+        display: inline-flex;
+        overflow: hidden !important;
+        width: auto
+    }
+        /* Buttons */
+        .cmpnt.cmpnt-grp .btn,
+        .cmpnt.cmpnt-grp button.btn,
+        .cmpnt.cmpnt-grp input.btn {
+            border: 1px solid rgba(0, 0, 0, .5);
+            font-size: inherit;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            outline: 0;
+            padding: 5px 10px
+        }
+    /* Navigation Panels */
+    .cmpnt.nav {
+        border: 1px solid rgba(0, 0, 0, .5);
+        border-radius: 0;
+        display: block
+    }
+        /* Navigation Styles */
+            /* Fill */
+            .cmpnt.nav.fill {
+                display: flex
+            }
+            .cmpnt.nav.fill > * {
+                flex-basis: auto;
+                flex-grow: 1
+            }
+            /* Tab */
+            .cmpnt.nav.tab,
+            .cmpnt.nav.tab > * {
+                border: 0;
+                border-radius: 2.5px
+            }
+            .cmpnt.nav.tab > *[psd-focus] {
+                background: #FFFFFF;
+                border: 1px solid rgba(0, 0, 0, .5);
+                border-bottom: 0
+            }
+            .cmpnt.nav.tab > *:not([psd-focus]) {
+                border-bottom: 1px solid rgba(0, 0, 0, .5)
+            }
+        /* Navigation Items */
+        .cmpnt.nav > * {
+            background: #F7F7F7;
+            border-left: 1px solid rgba(0, 0, 0, .5);
+            border-right: 1px solid rgba(0, 0, 0, .5);
+            cursor: pointer;
+            display: inline-block;
+            margin: 0;
+            padding: 7.5px
+        }
+        .cmpnt.nav > *:first-child {
+            border-left: 0
+        }
+        .cmpnt.nav > *:hover {
+            background: #FFFFFF
+        }
+        .cmpnt.nav > *:last-child {
+            border-right: 0
+        }
+    /* Stack Tables */
+    table.cmpnt {
+        border: 1px solid #454545;
+        border-radius: 2.5px;
+        margin: 0 auto;
+        overflow: hidden;
+        width: 100%
+    }
+        /* Cells */
+        table.cmpnt *:not(tr):empty {
+            min-height: 0
+        }
+        table.cmpnt *:not(tr):hover {
+            border-color: #787878;
+        }
+        /* Active Grids */
+            /* Cells */
+            table.cmpnt td.btn,
+            table.cmpnt th.btn {
+                display: table-cell !important
+            }
+            /* Rows */
+            table.cmpnt tr.btn.cmpnt {
+                display: table-row !important;
+                padding: 0
+            }
+            table.cmpnt td.btn,
+            table.cmpnt th.btn,
+            table.cmpnt tr.btn.cmpnt {
+                border-radius: 2.5px;
+                outline: 1px solid rgba(0, 50, 255, .75);
+                outline-offset: 3px;
+                text-align: inherit;
+                zoom: 1.15;
+                -webkit-appearance: initial
+            }
+/* Button Types */
+    .btnA,
+    .btnB,
+    .btnC,
+    .btnD {
+        /* --- NOTE ---
+                Each custom button type must have this.
+        */
+        outline: 0 !important
+    }
+    /* Button Type A | Tile */
+    .btnA,
+    button.btnA {
+        border: 0;
+        border-bottom-color: rgba(0, 0, 0, .3);
+        border-bottom-style: solid;
+        border-bottom-width: 4.25px;
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, .25);
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 10px
+    }
+    .btnA:focus,
+    .btnA:hover,
+    button.btnA:focus,
+    button.btnA:hover {
+        border-bottom-color: rgba(0, 0, 0, .6)
+    }
+    /* Button Type B | Transparent */
+    .btnB,
+    button.btnB {
+        background: none;
+        border: 1.5px solid;
+        border-radius: 50px;
+        color: #04F;
+        cursor: pointer;
+        display: inline-block;
+        padding: 2.5px 5px;
+        text-shadow: none;
+        transition: .75s
+    }
+    /* Button Type C | Card */
+    .btnC,
+    button.btnC {
+        border: 0;
+        cursor: pointer;
+        transition: .675s
+    }
+    /* Button Type D | Pad */
+    .btnD,
+    button.btnD {
+        border-radius: 3px;
+        padding: 5px
+    }
+/* Cards */
+.btnC,
+.crd {
+    /* --- NOTE ---
+            For cards and card-ified elements.
+    */
+    background: #07F;
+    border-radius: 2.5px;
+    color: #FFF;
+    display: inline-block;
+    padding: 3px
+}
+/* Container Styles */
+    /* Container Style A (Restrict the child elements to the parent element) {Basic Container} */
+    .row {
+        left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        right: 0;
+        max-width: 100% !important;
+        transform: none
+    }
+    .row > * {
+        max-width: 100% !important;
+        position: static
+    }
+/* Footnotes */
+.ftnt {
+    background: none;
+    border-top: 1px solid;
+    color: inherit;
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    line-height: initial;
+    margin: 0 auto;
+    max-width: 90%
+}
+/* Frames */
+.frm {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    color: #000000;
+    display: inline-block;
+    height: auto;
+    margin: 10px 5px;
+    overflow: hidden;
+    padding: 12.5px;
+    width: auto
+}
+    /* Captions (Content) */
+    .frm > *:not(img) {
+        margin-bottom: 10px;
+        margin-top: 10px
+    }
+    .frm div:first-of-type,
+    .frm div:last-of-type {
+        margin-bottom: 0;
+        margin-top: 0
+    }
+    /* Thumbnails */
+    .frm img:first-child,
+    .frm img:last-child {
+        border: 1px solid rgba(0, 0, 0, .3);
+        border-radius: 3px;
+        display: inline-block;
+        margin: 5px auto;
+        padding: 2.75px auto;
+        text-align: center;
+        width: 100%
+    }
+/* Console-Screen Message */
+[class*="msg-"],
+.msg {
+    border-left: 5px solid;
+    font-family: sans-serif;
+    margin: 7.5px auto;
+    padding: 17.5px 10px 20px 12.5px;
+    width: 65%
+}
+.msg {
+    background: rgba(127, 127, 127, .5);
+    border-color: #787878;
+    color: #000000
+}
+/* Descriptive Message */
+.msg-description {
+    background: rgba(232, 239, 243, .5);
+    border-color: #D0DCE4;
+    color: #9098C1
+}
+/* Console-Screen Error Message */
+.msg-error {
+    background: rgba(255, 0, 0, .5);
+    border-color: #FF0000;
+    color: #780000
+}
+/* Console-Screen Information Message */
+.msg-info {
+    background: rgba(0, 0, 255, .5);
+    border-color: #0000FF;
+    color: #FFFFFF
+}
+/* Console-Screen Validation Message */
+.msg-valid {
+    background: rgba(0, 255, 0, .5);
+    border-color: #007800;
+    color: #003400
+}
+/* Console-Screen Warning Message */
+.msg-warn {
+    background: rgba(255, 255, 0, .5);
+    border-color: #DEDE00;
+    color: #343400
+}
+/* Screen Cover */
+.scrn-cvr {
+    background: rgba(0, 0, 0, .765);
+    bottom: 0;
+    height: inherit;
+    outline: 5000px solid rgba(0, 0, 0, .765);
+    position: fixed;
+    width: inherit;
+    z-index: 2147483647 !important
+}
+
+/* Lapys JS Web Apps */
+    /* Accordion CSS */
+    .accr {
+        overflow: hidden;
+        z-index: 3
+    }
+    .accr-h {
+        cursor: pointer
+    }
+    /* Code Editor CSS */
+    .cd-edtr {
+        border-left: medium solid red;
+        max-height: 300px;
+        max-width: 95%;
+        z-index: 3
+    }
+    .cd-edtr * {
+        /* --- NOTE ---
+                Working elements within the editor
+                should not be click-able.
+        */
+        pointer-events: none
+    }
+    /* Carousel CSS */
+    .crsl {
+        background: transparent none no-repeat scroll center / 100% padding-box border-box;
+        background-blend-mode: inherit;
+        box-sizing: border-box;
+        display: block;
+        height: 250px;
+        margin: 0;
+        padding: 0 !important;
+        position: static;
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden;
+        width: 45%;
+        z-index: 3
+    }
+    .crsl[psd-focus] {
+        outline: 1px solid #0045FF
+    }
+    /* Carousel Slides */
+    .crsl > *:not(span) {
+        animation-delay: 0s;
+        animation-duration: inherit;
+        animation-fill-mode: backwards;
+        animation-iteration-count: 1;
+        animation-name: toggle_carousel;
+        animation-play-state: running;
+        animation-timing-function: ease-in;
+        display: none;
+        height: 100%;
+        padding: 0 !important;
+        position: relative !important;
+        width: 100%;
+        z-index: 3
+    }
+    .crsl > *:not(span):not(.m-parent-center) {
+        margin: 0 !important
+    }
+    .crsl > *:not(span):first-child {
+        display: block
+    }
+        /* Carousel Buttons */
+        .crsl-btn-l,
+        .crsl-btn-r {
+            outline: 0 !important;
+            z-index: 4
+        }
+        /* Carousel Indicators */
+        .crsl-nav {
+            animation: fadeIn .75s;
+            background: rgba(0, 0, 0, .25) !important;
+            cursor: pointer;
+            display: inline-block;
+            margin: 7.5px 10px;
+            position: relative
+        }
+        .crsl-nav:focus {
+            background: #FFF;
+            border-color: #FFF
+        }
+    /* Dropdown CSS */
+    .drpdwn {
+        cursor: pointer
+    }
+    /* Jumbotron CSS */
+    .jmbtrn {
+        align-items: center;
+        background-color: rgba(127, 127, 127, .25);
+        background-position: center;
+        background-size: 100%;
+        flex-basis: 100%;
+        height: 450px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        z-index: 3
+    }
+    /* Media CSS */
+    audio.med,
+    video.med {
+        background: #000;
+        display: block;
+        pointer-events: none;
+        width: 80%;
+        z-index: 3
+    }
+    audio.med::-webkit-media-controls,
+    video.med::-webkit-media-controls {
+        display: none !important
+    }
+        /* Controls */
+        audio.med + nav,
+        video.med + nav {
+            background: #FFF;
+            display: flex;
+            height: 32px;
+            margin: 0;
+            outline: 1px solid #000;
+            width: 80%;
+            z-index: 4
+        }
+        audio.med + nav > *,
+        video.med + nav > * {
+            flex-basis: 32px;
+            flex-grow: 0;
+            font-weight: bold;
+            margin: 0 2.5px;
+            overflow: hidden
+        }
+        audio.med + nav > [data-vid-currenttime],
+        audio.med + nav > [data-vid-duration],
+        audio.med + nav > [data-vid-dwnld],
+        audio.med + nav > [data-vid-rate],
+        video.med + nav > [data-vid-currenttime],
+        video.med + nav > [data-vid-duration],
+        video.med + nav > [data-vid-dwnld],
+        video.med + nav > [data-vid-rate] {
+            flex-basis: auto
+        }
+        audio.med + nav > [data-vid-seek],
+        video.med + nav > [data-vid-seek] {
+            flex-basis: 33%
+        }
+    /* Tab Panel CSS (formerly Tab Group CSS) */
+    .tb {
+        height: 300px;
+        outline: 1px solid;
+        overflow: hidden;
+        width: 80%;
+        z-index: 3
+    }
+    .tb > *,
+    .tb > * > * {
+        outline: 1px solid #000
+    }
+        /* Tab Panel Content */
+        .tb > .tb-c {
+            height: 100%;
+            overflow: auto;
+            width: 100%
+        }
+        .tb > .tb-c > * {
+            cursor: pointer;
+            display: none;
+            height: 100%;
+            width: 100%
+        }
+        /* Tab Panel Header Option */
+        .tb > .tb-o {
+            flex-basis: auto;
+            display: flex;
+            height: 32px;
+            justify-content: center;
+            width: 100%
+        }
+    /* Text Type CSS */
+    [data-kbd] {
+        /* --- NOTE ---
+                Stimulate text cursor effect.
+        */
+        animation: txtCursor .3s linear 0s infinite alternate-reverse forwards running;
+        border: 0;
+        border-left: 2px solid;
+        display: inline;
+        padding-right: 0;
+        z-index: 3
+    }
+    [data-kbd*="rev"] {
+        border-left: 0;
+        border-right: 2px solid
+    }
+    /* Tooltip CSS */
+    #tooltip {
+        animation: fadeIn .75s ease 0s 1 forwards backwards running;
+        background: #000000;
+        border: 1px solid;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+        color: #FFFFFF;
+        display: inline;
+        font-size: 10px;
+        left: 0;
+        opacity: 0;
+        padding: 2.5px;
+        pointer-events: none;
+        position: fixed;
+        transition: opacity .675s;
+        top: 0;
+        z-index: 2147483647 !important
+    }
+
+/* Lapys JS Responsive Elements */
+    /* *
+            --- NOTE ---
+                Responsive elements must not have
+                an equal or greater width of their containers.
+    */
+    .rspnv {
+        max-width: 100%
+    }
+    
+/* <audio>, <embed>, <iframe>, <object>, <video> | Responsive Embed */
+    audio.rspnv,
+    embed.rspnv,
+    iframe.rspnv,
+    object.rspnv,
+    video.rspnv,
+    .rspnv-audio audio,
+    .rspnv-audio embed,
+    .rspnv-audio iframe,
+    .rspnv-audio object,
+    .rspnv-audio video {
+        height: auto
+    }
+    
+/* <img> | Responsive Images */
+    img.rspnv,
+    .rspnv-img img {
+        display: block;
+        height: auto
+    }
+    
+/* <table> | Responsive Tables */
+    table.rspnv,
+    .rspnv-table table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        -ms-overflow-style: -ms-autohiding-scrollbar
+    }
+
+/* Lapys JS Icons
+    --- NOTE ---
+        Icons are made via fonts.
+*/
+[class*="icn-"] {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+    -webkit-font-smoothing: antialiased
+}
+[class*="icn-"]::after {
+    pointer-events: all !important;
+    user-select: text !important
+}
+[class*="icn-"]::after::selection {
+    background-color: #0078FF !important
+}
+    /* Icon Classes */
+    [class*="icn-1-"] {
+        font-family: Webdings !important
+    }
+    [class*="icn-2-"] {
+        font-family: Wingdings !important
+    }
+    [class*="icn-3-"] {
+        font-family: "Wingdings 2" !important
+    }
+    [class*="icn-4-"] {
+        font-family: "Wingdings 3" !important
+    }
+        /* Airplane | Circled "1" */
+        .icn-1-aeroplane::after,
+        .icn-1-airplane::after,
+        .icn-1-plane::after,
+        .icn-1-aeroplane1::after,
+        .icn-1-airplane1::after,
+        .icn-1-plane1::after,
+        .icn-3-circled1::after {
+            content: "j"
+        }
+        /* Alphabet | Fan */
+        .icn-1-alphabet::after,
+        .icn-2-fan::after {
+            content: ">"
+        }
+        /* Ambulance | Zodiac Aquarius */
+        .icn-1-ambulance::after,
+        .icn-2-aquarius::after {
+            content: "h"
+        }
+        /* Reload Arrows | Square with Shadow | Circled "8" */
+        .icn-1-arrowreload::after,
+        .icn-2-squarewithshadow::after,
+        .icn-2-squarewithshadow1::after,
+        .icn-3-circled8::after {
+            content: "q"
+        }
+        /* Ball | Memory Disk */
+        .icn-1-ball::after,
+        .icn-2-memorydisk::after,
+        .icn-2-memorydisk1::after {
+            content: "="
+        }
+        /* Ballot Box and Paper | Hand Writing with Pencil */
+        .icn-1-ballot::after,
+        .icn-2-writeleft::after {
+            content: "?"
+        }
+        /* Beach | Hand Waving | Vertical Hand */
+        .icn-1-beach::after,
+        .icn-2-handwave::after,
+        .icn-3-handflat2_fill::after {
+            content: "I"
+        }
+        /* Bicycle | Zodiac Leo | Stylized and Askew-ed Pointer Arrow */
+        .icn-1-bicycle::after,
+        .icn-2-leo::after,
+        .icn-4-styleaskewarrow::after {
+            content: "b"
+        }
+        /* Lightning Bolt or Thunder Bolt | Right Double Quote */
+        .icn-1-bolt::after,
+        .icn-2-rightdoublequote::after {
+            content: "~"
+        }
+        /* Box | Memory Disk | Thumbs Up */
+        .icn-1-box::after,
+        .icn-2-memorydisk2::after,
+        .icn-3-handthumbsup::after {
+            content: "<"
+        }
+        /* Bus | Diamond Shapes | Circled "2"_Fill */
+        .icn-1-bus::after,
+        .icn-2-diamonds::after,
+        .icn-3-circled2_fill::after {
+            content: "v"
+        }
+        /* Chili | Mailbox | Computer File | Pointer Arrow with Break */
+        .icn-1-chili::after,
+        .icn-2-mailbox2::after,
+        .icn-3-computerfile::after,
+        .icn-4-arrowwithbreak::after {
+            content: ","
+        }
+        /* Circle_Fill | Box | Circled "5" | Double-Head Pointer Arrow */
+        .icn-1-circle_fill::after,
+        .icn-2-box::after,
+        .icn-3-circled5::after,
+        .icn-4-doublearrow::after {
+            content: "n"
+        }
+        /* City | Thumbs Up | Hand pointing Right */
+        .icn-1-city::after,
+        .icn-2-handthumbsup::after,
+        .icn-3-handpointright::after {
+            content: "C"
+        }
+        /* Coliseum | Tear Drop | Square with Cross */
+        .icn-1-coliseum::after,
+        .icn-2-teardrop::after,
+        .icn-3-squarewithcross2::after {
+            content: "S"
+        }
+        /* Computer Window | Open Folder */
+        .icn-1-computerwindow::after,
+        .icn-2-openfolder::after {
+            content: "1"
+        }
+        /* Computer Windows | Computer File */
+        .icn-1-computerwindows::after,
+        .icn-2-computerfile::after {
+            content: "2"
+        }
+        /* Construction Site | Peace Signal | Hand pointing Right_Fill | Edged Hook Pointer Arrow */
+        .icn-1-constructionsite::after,
+        .icn-2-handpeace::after,
+        .icn-3-handpointright_fill::after,
+        .icn-3-handpointright_fill1::after,
+        .icn-4-edgedhookarrow::after {
+            content: "A"
+        }
+        /* Desert | Hand pointing Left */
+        .icn-1-desert::after,
+        .icn-2-handpointleft::after,
+        .icn-3-handpointright_fill2::after {
+            content: "E"
+        }
+        /* Double Left Pointer Arrow | Computer Keyboard */
+        .icn-1-doubleleftarrow::after,
+        .icn-2-computerkeyboard::after {
+            content: "7"
+        }
+        /* Double Left Pointer Arrow with Break | Telephone */
+        .icn-1-doubleleftarrowwithbreak::after,
+        .icn-2-telephone::after {
+            content: "9"
+        }
+        /* Double Right Pointer Arrow with Break | Laptop | Computer Mouse */
+        .icn-1-doublerightarrowwithbreak::after,
+        .icn-2-laptop::after,
+        .icn-3-computermouse2::after {
+            content: ":"
+        }
+        /* Double Right Pointer Arrow | Computer Mouse */
+        .icn-1-doublerightarrow::after,
+        .icn-2-computermouse::after,
+        .icn-2-computermouse1::after {
+            content: "8"
+        }
+        /* Down Pointer Arrow | Hourglass */
+        .icn-1-downarrow::after,
+        .icn-1-downarrow1::after,
+        .icn-2-hourglass::after {
+            content: "6"
+        }
+        /* Electronic High-Speed Train | Diamond | Circled "0"_Fill */
+        .icn-1-electronictrain::after,
+        .icn-2-diamond::after,
+        .icn-3-circled0_fill::after {
+            content: "t"
+        }
+        /* Ear | Flag | Cross */
+        .icn-1-ear::after,
+        .icn-2-flag::after,
+        .icn-3-cross::after {
+            content: "O"
+        }
+        /* Eye | Skull and Crossed Bones | Hand Wave */
+        .icn-1-eye::after,
+        .icn-2-skullandcrossedbones::after,
+        .icn-3-handwave::after {
+            content: "N"
+        }
+        /* Factory | Hand pointing Right | Vertical Hand | Dual Opposing Pointer Arrows with Break */
+        .icn-1-factory::after,
+        .icn-2-handpointright::after,
+        .icn-3-handflat::after,
+        .icn-3-handflat1::after,
+        .icn-4-dualarrow2withbreak::after {
+            content: "F"
+        }
+        /* Terrain Graph | Scissors | Pen */
+        .icn-1-geograph::after,
+        .icn-2-scissors2::after,
+        .icn-3-pen::after {
+            content: '"'
+        }
+        /* Marker Flag | Circled "3"_Fill */
+        .icn-1-flagmarker::after,
+        .icn-3-circled3_fill::after {
+            content: "w"
+        }
+        /* Flowers | Moon and Star | Ampersand */
+        .icn-1-flowers::after,
+        .icn-2-moonandstar::after,
+        .icn-3-ampersand::after,
+        .icn-3-ampersand1::after {
+            content: "Z"
+        }
+        /* Ship Freighter or Transport Barge | Snowflake | Square with Cross */
+        .icn-1-freighter::after,
+        .icn-1-ship::after,
+        .icn-2-snowflake::after,
+        .icn-3-squarewithcross3::after {
+            content: "T"
+        }
+        /* Information | Zodiac Pisces | Circled "0" */
+        .icn-1-info::after,
+        .icn-2-pisces::after,
+        .icn-3-circled0::after {
+            content: "i"
+        }
+        /* Island | Smiley Face | Hand pointing Upward */
+        .icn-1-island::after,
+        .icn-2-smiley::after,
+        .icn-3-handpointup::after {
+            content: "J"
+        }
+        /* Gift | Zodiac Scorpio */
+        .icn-1-gift::after,
+        .icn-2-scorpio::after {
+            content: "e"
+        }
+        /* Grawlix | Closed Mail */
+        .icn-1-grawlix::after,
+        .icn-2-closedmail::after {
+            content: "*"
+        }
+        /* Grawlix with Lightning Bolt or Grawlix with Thunder Bolt | Stamped Letter */
+        .icn-1-grawlixwithbolt::after,
+        .icn-2-letter::after {
+            content: "+"
+        }
+        /* Heavy Backslash | Chinese Character | Ampersand */
+        .icn-1-heavybackslash::after,
+        .icn-2-chinesecharacter::after,
+        .icn-3-ampersand2::after {
+            content: "\\"
+        }
+        /* Heavy Forward Slash | Mailbox | File | Double-Crossed Pointer Arrow */
+        .icn-1-heavyforwardslash::after,
+        .icn-2-mailbox4::after,
+        .icn-3-file::after,
+        .icn-4-dualcrossarrow::after {
+            content: "/"
+        }
+        /* House | Hand pointing Downward | Vertical Hand | Dual Pointer Arrows */
+        .icn-1-house::after,
+        .icn-2-handpointdown::after,
+        .icn-3-handflat_fill::after,
+        .icn-3-handflat_fill1::after,
+        .icn-4-dualarrow::after,
+        .icn-4-dualarrow1::after {
+            content: "H"
+        }
+        /* Houses | Hand Gesture | Hand pointing Left | Edged Track Pointer Arrow */
+        .icn-1-houses::after,
+        .icn-2-handgesture::after,
+        .icn-2-handgesture1::after,
+        .icn-3-handpointleft::after,
+        .icn-4-edgedtrackarrow::after {
+            content: "B"
+        }
+        /* Left Arrow */
+        .icn-1-leftarrow::after,
+        .icn-1-leftarrow1::after {
+            content: "3"
+        }
+        /* Love | Star of David */
+        .icn-1-love::after,
+        .icn-2-starofdavid::after {
+            content: "Y"
+        }
+        /* Medal | Open Book */
+        .icn-1-medal::after,
+        .icn-2-openbook::after {
+            content: "&"
+        }
+        /* Magnifier | Frowney Face | Hand pointing Up_Fill | U-Turn Curved Pointer Arrow */
+        .icn-1-magnifier::after,
+        .icn-2-frowney::after,
+        .icn-3-handpointup_fill::after,
+        .icn-4-uarrow::after {
+            content: "L"
+        }
+        /* Megaphone Off | Crucifix with Shadow | Circle with Cross */
+        .icn-1-megaphoneoff::after,
+        .icn-2-crucifixwithshadow::after,
+        .icn-3-circlewithcross2::after {
+            content: "V"
+        }
+        /* Megaphone On | Crucifix | Circle with Cross */
+        .icn-1-megaphoneon::after,
+        .icn-2-crucifix::after,
+        .icn-3-circlewithcross::after,
+        .icn-3-circlewithcross1::after {
+            content: "U"
+        }
+        /* Mountains | Bomb | Hand pointing Downward_Fill */
+        .icn-1-mountains::after,
+        .icn-2-bomb::after,
+        .icn-3-handpointdown_fill::after {
+            content: "M"
+        }
+        /* Miniature Bus Figure | Large Diamond | Circled 1_Fill */
+        .icn-1-minibusfigure::after,
+        .icn-2-bigdiamond::after,
+        .icn-3-circled1_fill::after {
+            content: "u"
+        }
+        /* Out of Range | Box with X | Circled "4"_Fill | Right-Angled Triangle_Fill */
+        .icn-1-noaccess::after,
+        .icn-2-boxwithcross::after,
+        .icn-3-circled4_fill::after,
+        .icn-4-rightangle_fill::after {
+            content: "x"
+        }
+        /* No Smoking | Circled "6"_Fill */
+        .icn-1-nocigarette::after,
+        .icn-1-nopipe::after,
+        .icn-1-nosmoke::after,
+        .icn-3-circled6_fill::after {
+            content: "z"
+        }
+        /* Destroyed House | Thumbs Down | Hand pointing Left_Fill | Double Opposing Pointer Arrows */
+        .icn-1-nohouse::after,
+        .icn-2-handthumbsdown::after,
+        .icn-3-handpointleft_fill2::after,
+        .icn-4-dualarrow2::after {
+            content: "D"
+        }
+        /* No Pirates | Scissors */
+        .icn-1-nopirates::after,
+        .icn-2-scissors::after,
+        .icn-2-scissors1::after {
+            content: "#"
+        }
+        /* Pause Button | Air Conditioner | Computer Mouse | Edged Pointer Arrow */
+        .icn-1-pause::after,
+        .icn-2-ac::after,
+        .icn-3-computermouse::after,
+        .icn-3-computermouse1::after,
+        .icn-4-edgedarrow::after {
+            content: ";"
+        }
+        /* Pipe | Flower_Fill | Circled "8"_Fill */
+        .icn-1-pipe::after,
+        .icn-2-flower_fill::after,
+        .icn-3-circled8_fill::after {
+            content: "|"
+        }
+        /* Police Car | Heavily Bordered Box | Circled "7" | Equilateral Triangle */
+        .icn-1-policecar::after,
+        .icn-2-heavyborderedbox::after,
+        .icn-3-circled7::after,
+        .icn-4-triangle::after {
+            content: "p"
+        }
+        /* Question Mark | Small Diamond | Circled "10" */
+        .icn-1-question::after,
+        .icn-2-smalldiamond::after,
+        .icn-3-circled10::after {
+            content: "s"
+        }
+        /* Railway | Sun | Square with Tick | Circle with Pointer Arrow */
+        .icn-1-rails::after,
+        .icn-2-sun::after,
+        .icn-3-squarewithtick::after,
+        .icn-4-circlewitharrow::after {
+            content: "R"
+        }
+        /* Ribbon | Mail Box */
+        .icn-1-ribbon::after,
+        .icn-2-mailbox::after,
+        .icn-2-mailbox1::after {
+            content: "-"
+        }
+        /* Right Arrow | Computer Files */
+        .icn-1-rightarrow::after,
+        .icn-1-rightarrow1::after,
+        .icn-2-computerfiles::after {
+            content: "4"
+        }
+        /* Long Drive Road | Mute Face | Hand pointing Downward */
+        .icn-1-road::after,
+        .icn-1-road1::after,
+        .icn-2-muteface::after,
+        .icn-3-handpointdown::after {
+            content: "K"
+        }
+        /* Forest Road | Wind Flag | Tick | Circle Pointer Arrow */
+        .icn-1-road2::after,
+        .icn-2-windflag::after,
+        .icn-3-tick::after,
+        .icn-4-circlearrow::after {
+            content: "P"
+        }
+        /* Satellite | Ampersand | Circled "2" */
+        .icn-1-satellite::after,
+        .icn-2-ampersand::after,
+        .icn-3-circled2::after {
+            content: "k"
+        }
+        /* Shield | Zodiac Libra */
+        .icn-1-shield::after,
+        .icn-2-libra::after {
+            content: "d"
+        }
+        /* Left Shock Bubble | Flower | Circled "7"_Fill */
+        .icn-1-shockbubbleleft::after,
+        .icn-2-flower::after,
+        .icn-3-circled7_fill::after {
+            content: "{"
+        }
+        /* Right Shock Bubble | Left Double Quote | Circled "9"_Fill */
+        .icn-1-shockbubbleright::after,
+        .icn-2-leftdoublequote::after,
+        .icn-3-circled9_fill::after {
+            content: "}"
+        }
+        /* Left Speech Bubble | Telephone_Fill */
+        .icn-1-speechbubbleleft::after,
+        .icn-2-telephone_fill::after {
+            content: "("
+        }
+        /* Right Speech Bubble | Phone */
+        .icn-1-speechbubbleright::after,
+        .icn-2-phone::after {
+            content: ")"
+        }
+        /* Two Speech Bubbles | Zodiac Aries */
+        .icn-1-speechbubbles2::after,
+        .icn-2-aries::after {
+            content: "^"
+        }
+        /* Three Speech Bubbles | Zodiac Taurus */
+        .icn-1-speechbubbles3::after,
+        .icn-2-taurus::after {
+            content: "_"
+        }
+        /* Spider | Pencil */
+        .icn-1-spider::after,
+        .icn-2-pencil::after {
+            content: "!"
+        }
+        /* Split Circle | Box with Up Pointer Arrow | Circled "5"_Fill */
+        .icn-1-splitcircle::after,
+        .icn-2-boxwithuparrow::after,
+        .icn-3-circled5_fill::after {
+            content: "y"
+        }
+        /* Square | Zodiac Virgo */
+        .icn-1-square::after,
+        .icn-2-virgo::after {
+            content: "c"
+        }
+        /* Square_Fill | Zodiac Capricorn */
+        .icn-1-square_fill::after,
+        .icn-2-capricorn::after {
+            content: "g"
+        }
+        /* Boat | Bordered Box | Circled "6" */
+        .icn-1-boat::after,
+        .icn-2-borderedbox::after,
+        .icn-3-circled6::after {
+            content: "o"
+        }
+        /* Suited Man | Full Moon with Shadow | Circled 4*/
+        .icn-1-suitman::after,
+        .icn-2-fullmoonwithshadow::after,
+        .icn-3-circled4::after {
+            content: "m"
+        }
+        /* Sunglasses or Sunshades | Glasses */
+        .icn-1-sunglasses::after,
+        .icn-1-sunshades::after,
+        .icn-2-glasses::after {
+            content: "$"
+        }
+        /* Square Target | Zodiac Gemini */
+        .icn-1-targetsquare::after,
+        .icn-2-gemini::after {
+            content: "`"
+        }
+        /* Temple | Hand pointing Up | Vertical Hand */
+        .icn-1-temple::after,
+        .icn-2-handpointup::after,
+        .icn-3-handflat2::after {
+            content: "G"
+        }
+        /* Tent in the Forest | Airplane | Square with Cross */
+        .icn-1-tent::after,
+        .icn-2-aeroplane2::after,
+        .icn-2-airplane2::after,
+        .icn-2-plane2::after,
+        .icn-3-squarewithcross::after,
+        .icn-3-squarewithcross1::after {
+            content: "Q"
+        }
+        /* Left Thought Bubble | Yin and Yang | Ampersand */
+        .icn-1-thoughtbubbleleft::after,
+        .icn-2-yinandyang::after,
+        .icn-3-ampersand3::after {
+            content: "["
+        }
+        /* Right Thought Bubble | Ship Steering Wheel */
+        .icn-1-thoughtbubbleright::after,
+        .icn-2-shipsteeringwheel::after {
+            content: "]"
+        }
+        /* Throwing Star | Circle_Fill | Circled "3" */
+        .icn-1-throwingstar::after,
+        .icn-2-circle_fill::after,
+        .icn-3-circled3::after {
+            content: "l"
+        }
+        /* Tick | Zodiac Cancer | Stylized Pointer Arrow */
+        .icn-1-tick::after,
+        .icn-2-cancer::after,
+        .icn-4-stylearrow::after {
+            content: "a"
+        }
+        /* Square Tiles | Mailbox | Computer Files */
+        .icn-1-tiles::after,
+        .icn-2-mailbox3::after,
+        .icn-3-computerfiles::after {
+            content: "."
+        }
+        /* Tools | Writing Hand with Pencil | Hand pointing Left */
+        .icn-1-tools::after,
+        .icn-2-writeright::after,
+        .icn-3-handpointleft_fill::after,
+        .icn-3-handpointleft_fill1::after {
+            content: "@"
+        }
+        /* Trophy | Bell */
+        .icn-1-trophy::after,
+        .icn-2-bell::after {
+            content: "%"
+        }
+        /* Truck | Zodiac Sagittarius | Pointer Arrow */
+        .icn-1-truck::after,
+        .icn-2-sagittarius::after,
+        .icn-4-arrow::after {
+            content: "f"
+        }
+        /* Underscore | Closed Folder */
+        .icn-1-underscore::after,
+        .icn-2-closedfolder::after {
+            content: "0"
+        }
+        /* Up Arrow | Cabinet */
+        .icn-1-uparrow::after,
+        .icn-1-uparrow1::after,
+        .icn-2-cabinet::after {
+            content: "5"
+        }
+        /* Volume Left | Grave Crucifix | Out of Range */
+        .icn-1-volumeleft::after,
+        .icn-2-gravecrucifix::after,
+        .icn-3-noaccess::after,
+        .icn-3-noaccess1::after {
+            content: "W"
+        }
+        /* Volume Right | Out of Range | Stylized and Broken Pointer Arrow */
+        .icn-1-volumeright::after,
+        .icn-3-noaccess2::after,
+        .icn-4-stylebreakarrow::after {
+            content: "X"
+        }
+        /* Crossed | Square with Shadow | Circled "9" | Equilateral Triangle_Fill */
+        .icn-1-cross::after,
+        .icn-2-squarewithshadow2::after,
+        .icn-3-circled9::after,
+        .icn-4-triangle_fill::after {
+            content: "r"
+        }
+
+/* Lapys JS Grid System */
+    /* Cell Grids */
+    [class*="grid-"] {
+        flex-grow: 1;
+        position: relative
+    }
+        /* Content */
+            /* 0-Cell Grid (0%) */
+            .grid-0 {
+                flex-basis: 0%;
+                min-width: 0%
+            }
+            /* 1-Cell Grid (100%) */
+            .grid-1 {
+                flex-basis: 100%;
+                min-width: 100%;
+                width: 100%
+            }
+            /* 2-Cell Grid (50%) */
+            .grid-2 {
+                flex-basis: 49.85%;
+                min-width: 49.85%;
+                width: 49.85%
+            }
+            /* 3-Cell Grid (33.334%) */
+            .grid-3 {
+                flex-basis: 33%;
+                min-width: 33%;
+                width: 33%
+            }
+            /* 4-Cell Grid (25%) */
+            .grid-4 {
+                flex-basis: 24.85%;
+                min-width: 24.85%;
+                width: 24.85%
+            }
+            /* 5-Cell Grid (20%) */
+            .grid-5 {
+                flex-basis: 19.85%;
+                min-width: 19.85%;
+                width: 19.85%
+            }
+            /* 6-Cell Grid (16.667%) */
+            .grid-6 {
+                flex-basis: 16.5%;
+                min-width: 16.5%;
+                width: 16.5%
+            }
+            /* 7-Cell Grid (14.285%) */
+            .grid-7 {
+                flex-basis: 14.125%;
+                min-width: 14.125%;
+                width: 14.125%
+            }
+            /* 8-Cell Grid (12.5%) */
+            .grid-8 {
+                flex-basis: 12.25%;
+                min-width: 12.25%;
+                width: 12.25%
+            }
+            /* 9-Cell Grid (11.111%) */
+            .grid-9 {
+                flex-basis: 10.95%;
+                min-width: 10.95%;
+                width: 10.95%
+            }
+            /* 10-Cell Grid (10%) */
+            .grid-10 {
+                flex-basis: 9.75%;
+                min-width: 9.75%;
+                width: 9.75%
+            }
+            /* 11-Cell Grid (9.09%) */
+            .grid-11 {
+                flex-basis: 8.9%;
+                min-width: 8.9%;
+                width: 8.9%
+            }
+            /* 12-Cell Grid (8.334%) */
+            .grid-12 {
+                flex-basis: 8.125%;
+                min-width: 8.125%;
+                width: 8.125%
+            }
+        /* Margin */
+            /* Left Margin */
+                /* 0-Cell Grid Left Margin (0%) */
+                .grid-l-0 {
+                    margin-left: 0%
+                }
+                /* 1-Cell Grid Left Margin (100%) */
+                .grid-l-1 {
+                    margin-left: 100%
+                }
+                /* 2-Cell Grid Left Margin (50%) */
+                .grid-l-2 {
+                    margin-left: 49.85%
+                }
+                /* 3-Cell Grid Left Margin (33.334%) */
+                .grid-l-3 {
+                    margin-left: 33%
+                }
+                /* 4-Cell Grid Left Margin (25%) */
+                .grid-l-4 {
+                    margin-left: 24.85%
+                }
+                /* 5-Cell Grid Left Margin (20%) */
+                .grid-l-5 {
+                    margin-left: 19.85%
+                }
+                /* 6-Cell Grid Left Margin (16.667%) */
+                .grid-l-6 {
+                    margin-left: 16.5%
+                }
+                /* 7-Cell Grid Left Margin (14.285%) */
+                .grid-l-7 {
+                    margin-left: 14.125%
+                }
+                /* 8-Cell Grid Left Margin (12.5%) */
+                .grid-l-8 {
+                    margin-left: 12.25%
+                }
+                /* 9-Cell Grid Left Margin (11.111%) */
+                .grid-l-9 {
+                    margin-left: 10.95%
+                }
+                /* 10-Cell Grid Left  Margin (10%) */
+                .grid-l-10 {
+                    margin-left: 9.75%
+                }
+                /* 11-Cell Grid Left Margin (9.09%) */
+                .grid-l-11 {
+                    margin-left: 8.9%
+                }
+                /* 12-Cell Grid Left Margin (8.334%) */
+                .grid-l-12 {
+                    margin-left: 8.125%
+                }
+            /* Right Margin */
+                /* 0-Cell Grid Right Margin (0%) */
+                .grid-r-0 {
+                    margin-right: 0%
+                }
+                /* 1-Cell Grid Right Margin (100%) */
+                .grid-r-1 {
+                    margin-right: 100%
+                }
+                /* 2-Cell Grid Right Margin (50%) */
+                .grid-r-2 {
+                    margin-right: 49.85%
+                }
+                /* 3-Cell Grid Right Margin (33.334%) */
+                .grid-r-3 {
+                    margin-right: 33%
+                }
+                /* 4-Cell Grid Right Margin (25%) */
+                .grid-r-4 {
+                    margin-right: 24.85%
+                }
+                /* 5-Cell Grid Right Margin (20%) */
+                .grid-r-5 {
+                    margin-right: 19.85%
+                }
+                /* 6-Cell Grid Right Margin (16.667%) */
+                .grid-r-6 {
+                    margin-right: 16.5%
+                }
+                /* 7-Cell Grid Right Margin (14.285%) */
+                .grid-r-7 {
+                    margin-right: 14.125%
+                }
+                /* 8-Cell Grid Right Margin (12.5%) */
+                .grid-r-8 {
+                    margin-right: 12.25%
+                }
+                /* 9-Cell Grid Right Margin (11.111%) */
+                .grid-r-9 {
+                    margin-right: 10.95%
+                }
+                /* 10-Cell Grid Right  Margin (10%) */
+                .grid-r-10 {
+                    margin-right: 9.75%
+                }
+                /* 11-Cell Grid Right Margin (9.09%) */
+                .grid-r-11 {
+                    margin-right: 8.9%
+                }
+                /* 12-Cell Grid Right Margin (8.334%) */
+                .grid-r-12 {
+                    margin-right: 8.125%
+                }
+    /* Columns */
+    .col-0 {
+        flex-grow: 0 !important
+    }
+    .col-1 {
+        flex-grow: 1 !important
+    }
+    .col-2 {
+        flex-grow: 2 !important
+    }
+    .col-3 {
+        flex-grow: 3 !important
+    }
+    .col-4 {
+        flex-grow: 4 !important
+    }
+    .col-5 {
+        flex-grow: 5 !important
+    }
+    .col-6 {
+        flex-grow: 6 !important
+    }
+    .col-7 {
+        flex-grow: 7 !important
+    }
+    .col-8 {
+        flex-grow: 8 !important
+    }
+    .col-9 {
+        flex-grow: 9 !important
+    }
+    .col-10 {
+        flex-grow: 10 !important
+    }
+    .col-11 {
+        flex-grow: 11 !important
+    }
+    .col-12 {
+        flex-grow: 12 !important
+    }
+    /* Container (Row) */
+    .col-grp {
+        display: flex;
+        flex-flow: row wrap;
+        object-fit: contain;
+        width: 100%
+    }
+    .col-grp > * {
+        align-items: flex-end
+    }
+
+/* Lapys JS Pseudo Selectors */
+/* :disabled */
+:disabled {
+    filter: alpha(opacity=67.825) brightness(.9675) opacity(.67825)
+}
+/* :disabled, :empty */
+:disabled:not([default]),
+:empty:not([default]) {
+    opacity: .9
+}
+/* :fullscreen */
+:fullscreen {
+    border: 0 !important;
+    bottom: 0 !important;
+    box-sizing: border-box !important;
+    left: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    max-height: none !important;
+    max-width: none !important;
+    outline: 0 !important;
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    z-index: 2147483646 !important
+}
+/* :link */
+:link:not([default]) {
+    text-decoration: none
+}
+/* :not */
+:not(button, input, .btn):read-write:focus {
+    outline: 1px solid #07F
+}
+:not([default])::after {
+    pointer-events: none
+}
+:not([default])::before {
+    pointer-events: none
+}
+/* :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder
+        --- NOTE ---
+            Style the form field placeholder text.
+*/
+:-moz-placeholder {
+    color: rgba(0, 0, 0, .5)
+}
+::-moz-placeholder {
+    color: rgba(0, 0, 0, .5)
+}
+:-ms-input-placeholder {
+    color: rgba(0, 0, 0, .5)
+}
+::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, .5)
+}
+/* :-moz-read-write */
+:moz-read-write {
+    -moz-user-modify: read-write !important
+}
+/* ::-webkit-clear-button, ::-webkit-search-cancel-button, ::-webkit-search-decoration
+        --- NOTE ---
+            Style the form field cancel button.
+*/
+::-webkit-clear-button,
+::-webkit-search-cancel-button,
+::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+/* ::-webkit-file-upload-button
+        --- NOTE ---
+            Style the form field file upload button.
+*/
+::-webkit-file-upload-button {
+    background: none;
+    background-color: initial;
+    border: 0;
+    bottom: 0;
+    cursor: auto;
+    font-size: inherit;
+    left: 0;
+    margin-left: 0;
+    max-height: initial;
+    padding: 0;
+    position: static;
+    transition: 0s;
+    -webkit-appearance: button
+}
